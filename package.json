@@ -1,0 +1,19 @@
+{
+  "name": "ifct2017bot",
+  "version": "0.0.1",
+  "description": "The Indian Food Composition Tables 2017 provides nutritional information on 151 discrete food components for 528 key foods.",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skillf/ifct2017bot.git"
+  },
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skillf/ifct2017bot/issues"
+  },
+  "homepage": "https://github.com/skillf/ifct2017bot#readme"
+}
