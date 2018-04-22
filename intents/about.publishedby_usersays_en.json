@@ -1,0 +1,198 @@
+[
+  {
+    "id": "077838cb-2751-4d01-954d-9e5abf0bfc63",
+    "data": [
+      {
+        "text": "who were ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " developed by",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "8b15302c-4910-4902-9fff-326ff0d4b947",
+    "data": [
+      {
+        "text": "who made ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "1053b201-4cf1-400b-bda7-9f87042cefc7",
+    "data": [
+      {
+        "text": "who created ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "2141ade5-2c8e-4a30-9b5c-c4e477be4d55",
+    "data": [
+      {
+        "text": "who wrote ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "0af56a30-5102-4226-b664-2a651b923199",
+    "data": [
+      {
+        "text": "who is ",
+        "userDefined": false
+      },
+      {
+        "text": "your",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " creator",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "e7d9a622-ccf1-42bc-8fe8-9e2745235cd8",
+    "data": [
+      {
+        "text": "who is ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " publisher",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "2c3f04e3-f5d5-43b3-81cf-46f4b8eaa934",
+    "data": [
+      {
+        "text": "your",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " research organization",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "935f8dbe-9bdb-454b-9616-7ab810f4bee6",
+    "data": [
+      {
+        "text": "organization responsible for writing ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "49989aa0-e231-479b-8dc5-04a96e567365",
+    "data": [
+      {
+        "text": "which organization issued ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  },
+  {
+    "id": "5d33df6a-a8b7-4b14-a149-3939552ecc71",
+    "data": [
+      {
+        "text": "who are ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " published by",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522266600
+  }
+]

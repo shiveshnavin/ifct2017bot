@@ -1,0 +1,63 @@
+{
+  "id": "2545f4e5-66e9-4a12-9935-5137373d456b",
+  "name": "query_abbreviation",
+  "auto": false,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "b93ee075-6403-42fe-a097-e82a63a79b1c",
+          "required": false,
+          "dataType": "@abbreviations-code",
+          "name": "abbreviations-code",
+          "value": "$abbreviations-code",
+          "isList": false
+        },
+        {
+          "id": "b13700a6-02ec-4aa7-bc77-992eee21cae4",
+          "required": false,
+          "dataType": "@english-fullform",
+          "name": "english-fullform",
+          "value": "$english-fullform",
+          "isList": false
+        },
+        {
+          "id": "71563428-fb24-4e04-9e7d-5d16887778de",
+          "required": false,
+          "dataType": "@english-show",
+          "name": "english-show",
+          "value": "$english-show",
+          "isList": false
+        },
+        {
+          "id": "9c946329-abf5-4627-9909-26490ce36033",
+          "required": false,
+          "dataType": "@name",
+          "name": "name",
+          "value": "$name",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": "Does it stand for $abbreviations-code?"
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "google": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": true,
+  "lastUpdate": 1524412312,
+  "fallbackIntent": false,
+  "events": []
+}

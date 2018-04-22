@@ -1,0 +1,74 @@
+[
+  {
+    "id": "345cf303-2b08-459f-84ce-2bb77c04eee5",
+    "data": [
+      {
+        "text": "is nutrient data exact",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522243716
+  },
+  {
+    "id": "56a1ef93-f5ff-4d90-8641-fb2136fc3dcb",
+    "data": [
+      {
+        "text": "is food composition data exact",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522243716
+  },
+  {
+    "id": "f29713f3-a37a-40d8-9e6a-842b90620104",
+    "data": [
+      {
+        "text": "any limitations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522243716
+  },
+  {
+    "id": "1f3d4975-6cee-46c4-9f46-20b7d03a99c0",
+    "data": [
+      {
+        "text": "your",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " limitations",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522243716
+  },
+  {
+    "id": "4f6c0957-47f7-4f1b-8c54-9e8be4a922bd",
+    "data": [
+      {
+        "text": "what are the limitations in ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522243716
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "e851b23f-bb73-4be6-85f5-1fab9fba3961",
+    "data": [
+      {
+        "text": "1937",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " event",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524406137
+  },
+  {
+    "id": "48ee0b7b-df71-4ba9-af12-794fe9f3cdb2",
+    "data": [
+      {
+        "text": "1937",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " what occurred",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524406137
+  },
+  {
+    "id": "0c36801b-357f-4575-b696-4e2d7df571a4",
+    "data": [
+      {
+        "text": "what happened in ",
+        "userDefined": false
+      },
+      {
+        "text": "1937",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524406137
+  },
+  {
+    "id": "9430253b-b210-4da1-9f30-c6392479d782",
+    "data": [
+      {
+        "text": "what events happened in ",
+        "userDefined": false
+      },
+      {
+        "text": "1937",
+        "alias": "date",
+        "meta": "@sys.date",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524406137
+  }
+]

@@ -1,0 +1,310 @@
+[
+  {
+    "id": "cc1e4b72-834a-4de9-a029-66c35dd6ddee",
+    "data": [
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "074e505b-4130-4098-8564-a7e32e8cab49",
+    "data": [
+      {
+        "text": "i want to know about ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "ecb66ac8-99dd-48ec-ae2e-75a858b031a1",
+    "data": [
+      {
+        "text": "can ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tell",
+        "alias": "english-show",
+        "meta": "@english-show",
+        "userDefined": true
+      },
+      {
+        "text": " me about ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "4ed626cb-327a-42aa-b8a4-1891b84af35c",
+    "data": [
+      {
+        "text": "tell",
+        "alias": "english-show",
+        "meta": "@english-show",
+        "userDefined": true
+      },
+      {
+        "text": " me about ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "9be8a924-942a-4d64-b852-9f5386ed1bc1",
+    "data": [
+      {
+        "text": "display",
+        "alias": "english-show",
+        "meta": "@english-show",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "8b50f713-7f44-41f3-9bf8-30b5d107766d",
+    "data": [
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "expanded",
+        "alias": "english-fullform",
+        "meta": "@english-fullform",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "c7c026fc-79e2-400a-ae76-34bc5f0c3917",
+    "data": [
+      {
+        "text": "what is ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "e803981a-ad30-4ac2-817c-aceb06a1c844",
+    "data": [
+      {
+        "text": "express",
+        "alias": "english-show",
+        "meta": "@english-show",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "long form",
+        "alias": "english-fullform",
+        "meta": "@english-fullform",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "69f4780c-00d4-4230-a063-6ae26628a3ca",
+    "data": [
+      {
+        "text": "whats ",
+        "userDefined": false
+      },
+      {
+        "text": "meant",
+        "alias": "english-fullform",
+        "meta": "@english-fullform",
+        "userDefined": true
+      },
+      {
+        "text": " by ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "8c1cfd6d-38de-4a44-8b47-a9fe07eb7490",
+    "data": [
+      {
+        "text": "tell",
+        "alias": "english-show",
+        "meta": "@english-show",
+        "userDefined": true
+      },
+      {
+        "text": " me ",
+        "userDefined": false
+      },
+      {
+        "text": "expansion",
+        "alias": "english-fullform",
+        "meta": "@english-fullform",
+        "userDefined": true
+      },
+      {
+        "text": " of ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "39b9550a-6b0b-4c9a-a1d3-03b2693d93aa",
+    "data": [
+      {
+        "text": "full form",
+        "alias": "english-fullform",
+        "meta": "@english-fullform",
+        "userDefined": true
+      },
+      {
+        "text": " of ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  },
+  {
+    "id": "c80ad5e7-bee5-49d6-b2c0-1552efd7d9a3",
+    "data": [
+      {
+        "text": "what is the ",
+        "userDefined": false
+      },
+      {
+        "text": "expanded form",
+        "alias": "english-fullform",
+        "meta": "@english-fullform",
+        "userDefined": true
+      },
+      {
+        "text": " of ",
+        "userDefined": false
+      },
+      {
+        "text": "AAS",
+        "alias": "abbreviations-code",
+        "meta": "@abbreviations-code",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522321760
+  }
+]

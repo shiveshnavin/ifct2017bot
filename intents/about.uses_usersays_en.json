@@ -1,0 +1,120 @@
+[
+  {
+    "id": "ae4e17d5-2019-4f6c-a438-a471872a7986",
+    "data": [
+      {
+        "text": "uses",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522267440
+  },
+  {
+    "id": "63bb1b69-3414-4a86-91aa-0890d399df6e",
+    "data": [
+      {
+        "text": "your",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " uses",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522267440
+  },
+  {
+    "id": "e52e94c0-cfb7-44e5-8664-e991f0f03622",
+    "data": [
+      {
+        "text": "for what reasons are ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " useful",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522267440
+  },
+  {
+    "id": "62739b81-be59-4d71-b8d6-1ab9c93f5a2c",
+    "data": [
+      {
+        "text": "what are ",
+        "userDefined": false
+      },
+      {
+        "text": "your",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " use cases",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522267440
+  },
+  {
+    "id": "7479d645-bd05-4bad-8617-09708e9efafe",
+    "data": [
+      {
+        "text": "what are ",
+        "userDefined": false
+      },
+      {
+        "text": "you",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " useful for",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522267440
+  },
+  {
+    "id": "d8a13873-2d03-4788-87a3-e5b9be66f8d0",
+    "data": [
+      {
+        "text": "what are ",
+        "userDefined": false
+      },
+      {
+        "text": "your",
+        "alias": "name",
+        "meta": "@name",
+        "userDefined": true
+      },
+      {
+        "text": " uses",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1522267440
+  }
+]
