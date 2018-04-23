@@ -6,6 +6,7 @@
   "responses": [
     {
       "resetContexts": false,
+      "action": "input.welcome",
       "affectedContexts": [],
       "parameters": [],
       "messages": [
@@ -24,7 +25,7 @@
   "priority": 500000,
   "webhookUsed": false,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1522409864,
+  "lastUpdate": 1524461052,
   "fallbackIntent": false,
   "events": [
     {

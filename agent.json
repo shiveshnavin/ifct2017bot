@@ -1,17 +1,16 @@
 {
   "description": "Indian Food Composition Tables",
   "language": "en",
-  "activeAssistantAgents": [
-    "smalltalk-domain-on",
-    "smalltalk-fulfillment-on"
-  ],
+  "activeAssistantAgents": [],
   "disableInteractionLogs": false,
   "googleAssistant": {
     "googleAssistantCompatible": false,
     "welcomeIntentSignInRequired": false,
     "startIntents": [],
     "systemIntents": [],
-    "endIntentIds": [],
+    "endIntentIds": [
+      "0383e4a1-a406-46e1-a0cb-187f9ea47158"
+    ],
     "oAuthLinking": {
       "required": false,
       "grantType": "AUTH_CODE_GRANT"

@@ -1,0 +1,454 @@
+[
+  {
+    "value": "challenge",
+    "synonyms": [
+      "challenge",
+      "difficulty",
+      "inconsistent",
+      "fragmentary",
+      "exhaustive",
+      "challenging"
+    ]
+  },
+  {
+    "value": "data",
+    "synonyms": [
+      "data",
+      "information"
+    ]
+  },
+  {
+    "value": "source",
+    "synonyms": [
+      "source",
+      "from",
+      "origin",
+      "taken",
+      "derived",
+      "borrowed",
+      "obtained",
+      "take",
+      "derive",
+      "borrow",
+      "obtain",
+      "taking",
+      "deriving",
+      "borrowing",
+      "obtaining"
+    ]
+  },
+  {
+    "value": "column",
+    "synonyms": [
+      "component",
+      "column"
+    ]
+  },
+  {
+    "value": "form",
+    "synonyms": [
+      "form"
+    ]
+  },
+  {
+    "value": "type",
+    "synonyms": [
+      "type",
+      "group",
+      "category",
+      "class",
+      "set",
+      "lot",
+      "batch",
+      "bracket",
+      "sort",
+      "kind",
+      "variety",
+      "collection",
+      "cluster"
+    ]
+  },
+  {
+    "value": "learn",
+    "synonyms": [
+      "learn",
+      "understand",
+      "more",
+      "learning",
+      "understanding",
+      "learnt",
+      "understood"
+    ]
+  },
+  {
+    "value": "limitation",
+    "synonyms": [
+      "limitation",
+      "exact"
+    ]
+  },
+  {
+    "value": "publish",
+    "synonyms": [
+      "publish",
+      "issue",
+      "create",
+      "write",
+      "make",
+      "develop",
+      "produce",
+      "print",
+      "publicize",
+      "announce",
+      "report",
+      "declare",
+      "post",
+      "communicate",
+      "impart",
+      "broadcast",
+      "transmit",
+      "distribute",
+      "spread",
+      "promulgate",
+      "propagandize",
+      "disseminate",
+      "circulate",
+      "air",
+      "blazon",
+      "herald",
+      "proclaim",
+      "disclose",
+      "reveal",
+      "divulge",
+      "publishing",
+      "issuing",
+      "creating",
+      "writing",
+      "making",
+      "developing",
+      "producing",
+      "printing",
+      "publicizing",
+      "announcing",
+      "reporting",
+      "declaring",
+      "posting",
+      "communicating",
+      "imparting",
+      "broadcasting",
+      "transmiting",
+      "distributing",
+      "spreading",
+      "promulgating",
+      "propagandizing",
+      "disseminating",
+      "circulating",
+      "airing",
+      "blazoning",
+      "heralding",
+      "proclaiming",
+      "disclosing",
+      "revealing",
+      "divulging",
+      "published",
+      "issued",
+      "created",
+      "wrote",
+      "written",
+      "made",
+      "developed",
+      "produced",
+      "printed",
+      "publicized",
+      "announced",
+      "reported",
+      "declared",
+      "posted",
+      "communicated",
+      "imparted",
+      "broadcasted",
+      "transmitted",
+      "distributed",
+      "spreaded",
+      "promulgated",
+      "propagandized",
+      "disseminated",
+      "circulated",
+      "aired",
+      "blazoned",
+      "heralded",
+      "proclaimed",
+      "disclosed",
+      "revealed",
+      "divulged",
+      "publication",
+      "creation",
+      "production",
+      "declaration",
+      "communication",
+      "transmission",
+      "distribution",
+      "promulgation",
+      "circulation",
+      "proclaimation",
+      "revelation"
+    ]
+  },
+  {
+    "value": "publisher",
+    "synonyms": [
+      "publisher",
+      "issuer",
+      "creator",
+      "writer",
+      "maker",
+      "developer",
+      "producer",
+      "printer",
+      "publicizer",
+      "announcer",
+      "reporter",
+      "declarer",
+      "poster",
+      "communicator",
+      "imparter",
+      "broadcaster",
+      "transmitter",
+      "distributor",
+      "spreader",
+      "promulgator",
+      "propagandizer",
+      "disseminator",
+      "circulator",
+      "airer",
+      "blazoner",
+      "heralder",
+      "proclaimer",
+      "discloser",
+      "revealer",
+      "divulger"
+    ]
+  },
+  {
+    "value": "support",
+    "synonyms": [
+      "support",
+      "back",
+      "help",
+      "supporting",
+      "backing",
+      "helping",
+      "supported",
+      "backed",
+      "helped"
+    ]
+  },
+  {
+    "value": "supporter",
+    "synonyms": [
+      "supporter",
+      "backer",
+      "helper",
+      "friend",
+      "ally"
+    ]
+  },
+  {
+    "value": "fund",
+    "synonyms": [
+      "fund",
+      "finance",
+      "money",
+      "contribute",
+      "donate",
+      "pay",
+      "funding",
+      "financing",
+      "contributing",
+      "donating",
+      "paying",
+      "funded",
+      "financed",
+      "contributed",
+      "donated",
+      "paid"
+    ]
+  },
+  {
+    "value": "funder",
+    "synonyms": [
+      "funder",
+      "financer",
+      "monetary",
+      "contributor",
+      "donator",
+      "payer"
+    ]
+  },
+  {
+    "value": "credit",
+    "synonyms": [
+      "credit",
+      "acknowledge",
+      "crediting",
+      "acknowledging",
+      "credited",
+      "acknowledged",
+      "acknowledgement"
+    ]
+  },
+  {
+    "value": "when",
+    "synonyms": [
+      "when",
+      "date",
+      "day",
+      "month",
+      "year",
+      "last"
+    ]
+  },
+  {
+    "value": "what",
+    "synonyms": [
+      "what",
+      "about"
+    ]
+  },
+  {
+    "value": "why",
+    "synonyms": [
+      "why",
+      "cause",
+      "reason"
+    ]
+  },
+  {
+    "value": "use",
+    "synonyms": [
+      "use",
+      "utilize",
+      "employ",
+      "apply",
+      "useful",
+      "using",
+      "utilizing",
+      "employing",
+      "applying",
+      "used",
+      "utilized",
+      "employed",
+      "applied"
+    ]
+  },
+  {
+    "value": "user",
+    "synonyms": [
+      "user",
+      "utilizer",
+      "applier"
+    ]
+  },
+  {
+    "value": "father",
+    "synonyms": [
+      "father"
+    ]
+  },
+  {
+    "value": "interest",
+    "synonyms": [
+      "interest",
+      "bioactive",
+      "first",
+      "interesting",
+      "interested"
+    ]
+  },
+  {
+    "value": "food",
+    "synonyms": [
+      "food"
+    ]
+  },
+  {
+    "value": "composition",
+    "synonyms": [
+      "composition",
+      "nutrient"
+    ]
+  },
+  {
+    "value": "_",
+    "synonyms": [
+      "is",
+      "was",
+      "were",
+      "you",
+      "your",
+      "they",
+      "their",
+      "we",
+      "our",
+      "a",
+      "an",
+      "the",
+      "i",
+      "he",
+      "him",
+      "she",
+      "her",
+      "as",
+      "at",
+      "if",
+      "in",
+      "it",
+      "of",
+      "on",
+      "to",
+      "by",
+      "want",
+      "well",
+      "than",
+      "then",
+      "thus",
+      "however",
+      "ok",
+      "okay",
+      "me",
+      "can",
+      "could",
+      "tell",
+      "told",
+      "say",
+      "said",
+      "speak",
+      "spoke",
+      "show",
+      "shown",
+      "known",
+      "known",
+      "are",
+      "do",
+      "have",
+      "having",
+      "for",
+      "while",
+      "which",
+      "provide",
+      "providing",
+      "provided",
+      "international"
+    ]
+  },
+  {
+    "value": "who",
+    "synonyms": [
+      "who",
+      "whom",
+      "person",
+      "people",
+      "members"
+    ]
+  }
+]

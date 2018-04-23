@@ -1,0 +1,37 @@
+{
+  "id": "f9794ae0-f58b-43cc-8d3d-3741d7e1c9ac",
+  "name": "query_about",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "608b2187-66f3-456d-b39d-e7fbef094523",
+          "required": false,
+          "dataType": "@about",
+          "name": "about",
+          "value": "$about",
+          "isList": true
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1524455719,
+  "fallbackIntent": false,
+  "events": []
+}

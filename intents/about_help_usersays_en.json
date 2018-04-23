@@ -1,0 +1,74 @@
+[
+  {
+    "id": "275c4f8c-8bf5-42a6-a208-2d845e8a2427",
+    "data": [
+      {
+        "text": "help",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524460924
+  },
+  {
+    "id": "b7e12d13-eb9b-450d-974a-a0637a57a7e7",
+    "data": [
+      {
+        "text": "what can i do",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524460924
+  },
+  {
+    "id": "cf0db5a8-a77c-4ba3-8249-b45088fc88f3",
+    "data": [
+      {
+        "text": "how to speak",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524460924
+  },
+  {
+    "id": "fb8ec77a-39ec-4aed-9fc8-c2124f119fc7",
+    "data": [
+      {
+        "text": "how to use",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524460924
+  },
+  {
+    "id": "ab409329-fc3e-40cd-afce-d95a1570a78c",
+    "data": [
+      {
+        "text": "what can you do",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524460924
+  },
+  {
+    "id": "60191b4e-b061-489a-81c0-716f6d39ce17",
+    "data": [
+      {
+        "text": "what do you do",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1524460924
+  }
+]

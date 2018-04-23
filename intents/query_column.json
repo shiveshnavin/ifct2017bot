@@ -1,6 +1,6 @@
 {
-  "id": "2545f4e5-66e9-4a12-9935-5137373d456b",
-  "name": "query_abbreviation",
+  "id": "131bafa0-67b6-4c40-98a1-5aea54243e46",
+  "name": "query_column",
   "auto": false,
   "contexts": [],
   "responses": [
@@ -9,11 +9,10 @@
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "65d1b057-c0ec-492b-9e81-bada1088654f",
-          "required": false,
-          "dataType": "@abbreviations",
-          "name": "abbreviations",
-          "value": "$abbreviations",
+          "id": "80c1baa7-0bad-44ab-a136-94a532dcded9",
+          "dataType": "@columns",
+          "name": "columns",
+          "value": "$columns",
           "isList": false
         }
       ],
@@ -46,7 +45,7 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": true,
-  "lastUpdate": 1524461500,
+  "lastUpdate": 1524462514,
   "fallbackIntent": false,
   "events": []
 }
