@@ -1,0 +1,42 @@
+[[help]]
+Food additives are used to preserve flavor, or enhance taste and appearance. Look at ingredients on the packaging and you can find things like "E202", or "100(ii)" mentioned. These are called the E number, or I.N.S. code of the additive.
+
+You can ask me about the "name", "code", "type", or "approval" of any such additive. You can ask like:
+- What is INS 203?
+- What is the E number of Potassium Sorbate?
+- Tell me the name of INS 160.3.
+- Give me the type of E 100.
+- I want to know about approval of INS 203.
+
+Say "done / got it" when you are done talking to me.
+
+
+[[welcome:]]
+Hi! You can ask me about the "name", "code", "type", or "approval" of any food additive. Say "help", to know more, or "done / got it" when you are done talking to me.
+Hello! You can ask me about the "name", "code", "type", or "approval" of any food additive. Say "help", to know more, or "done / got it" when you are done talking to me.
+Good day! You can ask me about the "name", "code", "type", or "approval" of any food additive. Say "help", to know more, or "done / got it" when you are done talking to me.
+Greetings! You can ask me about the "name", "code", "type", or "approval" of any food additive. Say "help", to know more, or "done / got it" when you are done talking to me.'
+
+
+[[stop:]]
+Goodbye!
+Bye!
+Tata!
+Alvida!
+
+
+[[fallback:]]
+I didn't get that. Can you say it again?
+I missed what you said. Say it again?
+Sorry, could you say that again?
+Sorry, can you say that again?
+Can you say that again?
+Sorry, I didn't get that.
+Sorry, what was that?
+One more time?
+What was that?
+Say that again?
+I didn't get that.
+I missed that.
+
+
