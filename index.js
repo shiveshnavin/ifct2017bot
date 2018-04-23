@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const https = require('https');
 const http = require('http');
-const query = require('./query');
+const query = require('./intent');
 const alexa = require('./alexa');
 const dialogflow = require('./dialogflow');
 

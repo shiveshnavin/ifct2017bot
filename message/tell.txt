@@ -1,12 +1,22 @@
 [[help]]
-Food additives are used to preserve flavor, or enhance taste and appearance. Look at ingredients on the packaging and you can find things like "E202", or "100(ii)" mentioned. These are called the E number, or I.N.S. code of the additive.
+The Indian Food Composition Tables 2017 provides nutritional information on 151 discrete food components for 528 key foods. IFCT provides data of regular nutrients in foods complete in all respect and also on a whole range of bioactive substances. Vitamin D2 content in plant foods is presented for the first time in the world. The tables contain data on oligosaccharides, phytosterols, organic acids and individual polyphenols. It also embodies an exhaustive database on amino acid and fatty acid profiles of various foods. Except for eggs, all other food component data are for foods in the raw form.
 
-You can ask me about the "name", "code", "type", or "approval" of any such additive. You can ask like:
-- What is INS 203?
-- What is the E number of Potassium Sorbate?
-- Tell me the name of INS 160.3.
-- Give me the type of E 100.
-- I want to know about approval of INS 203.
+You can:
+- Query Food Composition
+- Ask about Food
+- Ask about Food Components
+- or, Ask about Food Components
+
+You can ask like:
+- Show Foods with lowest Free Sugars?
+- Find Leafy Vegetables with highest Vitamin A?
+- Query sum of Calcium in Food grouped by Food Group.
+- I want to know about Atta.
+- Show me a picture of Imli Patte.
+- I want to know about Thiamine.
+- Analysis used for knowing Protein content in food?
+- Show me FCT issue dates.
+- Who is the father of nutrition in India?
 
 Say "done / got it" when you are done talking to me.
 

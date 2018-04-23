@@ -1,6 +1,6 @@
 const Alexa = require('alexa-sdk');
 const message = require('./message');
-const query = require('./query');
+const query = require('./intent');
 
 const E = process.env;
 const LAUNCHED = new Set();
@@ -32,7 +32,7 @@ function LaunchRequest() {
 
 function DefaultFallbackIntent() {
   console.log(`ALEXA.DefaultFallbackIntent`);
-  this.emit(tell(this), message('error'));
+  this.emit(tell(this), message('fallback'));
 };
 
 function HelpIntent() {

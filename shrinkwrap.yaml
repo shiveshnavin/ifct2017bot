@@ -4,12 +4,9 @@ dependencies:
   aws-lambda-mock-context: 3.1.1
   body-parser: 1.18.2
   express: 4.16.3
-  food-e: 0.1.4
-  food-ins: 0.1.4
   natural: 0.5.6
   node-persist: 2.1.0
   request: 2.85.0
-  roman-numerals: 0.3.2
 packages:
   /accepts/1.3.5:
     dependencies:
@@ -365,18 +362,6 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-Y1GUDo39ez4aHAw7MysnUD5JzYX+WaIj8I57kO3aEPT1fFRL4sr7mjei97FgnwhAyyzRYmQZaTHb2+9uZ1dPtg==
-  /food-e/0.1.4:
-    dependencies:
-      lunr: 2.1.6
-    dev: false
-    resolution:
-      integrity: sha512-VpB8ekK9hUrSJVLCHdq3/Di3pa4XPttd7oXCLESJ+98rGnS6fVyWvzpO+eexPfNJzgZ6moaqX3HQezos/MqYGg==
-  /food-ins/0.1.4:
-    dependencies:
-      lunr: 2.1.6
-    dev: false
-    resolution:
-      integrity: sha512-+qfrwjwDTnI7bUywzXmtwjvJ8jPw/XO84ITNYSR6/8peB0MmyN8PApGcgeYqDpVgA5je7FQeVm0kQlrnDAytwg==
   /forever-agent/0.6.1:
     dev: false
     resolution:
@@ -587,10 +572,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-svL3uiZf1RwhH+cWrfZn3A4+U58wbP0tGVTLQPbjplZxZ8ROD9VLuNgsRniTlLe7OlSqR79RUehXgpBW/s0IQw==
-  /lunr/2.1.6:
-    dev: false
-    resolution:
-      integrity: sha512-ydJpB8CX8cZ/VE+KMaYaFcZ6+o2LruM6NG76VXdflYTgluvVemz1lW4anE+pyBbLvxJHZdvD1Jy/fOqdzAEJog==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -792,10 +773,6 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-8H7Ehijd4js+s6wuVPLjwORxD4zeuyjYugprdOXlPSqaApmL/QOy+EB/beICHVCHkGMKNh5rvihb5ov+IDw4mg==
-  /roman-numerals/0.3.2:
-    dev: false
-    resolution:
-      integrity: sha1-kH3fkMZOG13OjtXo+wcYMY8vJuY=
   /safe-buffer/5.1.1:
     dev: false
     resolution:
@@ -1014,9 +991,6 @@ specifiers:
   aws-lambda-mock-context: ^3.1.1
   body-parser: ^1.18.2
   express: ^4.16.3
-  food-e: ^0.1.4
-  food-ins: ^0.1.4
   natural: ^0.5.6
   node-persist: ^2.1.0
   request: ^2.85.0
-  roman-numerals: ^0.3.2

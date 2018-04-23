@@ -1,4 +1,4 @@
-const query = require('./query');
+const query = require('./intent');
 
 const LAUNCHED = new Set();
 
