@@ -1,6 +1,6 @@
 const Alexa = require('alexa-sdk');
 const message = require('./message');
-const query = require('./intent');
+const intent = require('./intent');
 
 const E = process.env;
 const LAUNCHED = new Set();
@@ -21,8 +21,11 @@ function name(p) {
   if(!p.resolutions || !p.resolutions.resolutionsPerAuthority[0].values) return p.value||'';
   return p.resolutions.resolutionsPerAuthority[0].values[0].value.name;
 };
-function parameters(s) {
-  return {key: name(s.key), tags: s.tags.value||''};
+function parameters(slt) {
+  var z = {};
+  for(var k in slt)
+    z[k] = name(slt[k]);
+  return z;
 };
 
 function LaunchRequest() {
@@ -59,8 +62,8 @@ function Unhandled() {
   var int = this.event.request.intent;
   if(!int || !int.slots) return this.emit(':tell', message('stop'));
   var nam = int.name, ps = parameters(int.slots);
-  var out = query(ps.key||'', [ps.tags]);
   console.log(`ALEXA.${nam}>>`, ps);
+  var out = intent(nam, ps);
   console.log(`ALEXA.${nam}<< "${out}"`);
   this.emit(tell(this), out);
 };
@@ -76,4 +79,3 @@ exports.handler = function(e, ctx, fn) {
   alexa.registerHandlers(handlers);
   alexa.execute();
 };
-// this.event.request.intent.slots.text.value;

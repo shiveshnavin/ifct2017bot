@@ -5,7 +5,7 @@ You can:
 - Query Food Composition
 - Ask about Food
 - Ask about Food Components
-- or, Ask about Food Components
+- or, Ask about IFCT 2017
 
 You can ask like:
 - Show Foods with lowest Free Sugars?

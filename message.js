@@ -19,6 +19,7 @@ for(var f of fs.readdirSync('message'))
 
 function message(typ, obj={}) {
   var fmts = MAP.get(typ), fmt = fmts[Math.floor(Math.random()*fmts.length)];
-  return fmt.replace(/\${(\w+)}/g, (m, p1) => obj[p1]);
+  var txt = fmt.replace(/\${(\w+)}/g, (m, p1) => obj[p1]);
+  return txt.replace(/\s*(%|&)\s*/g, (m, p1) => ({'%': ' percent ', '&': ' and '}[p1]));
 };
 module.exports = message;

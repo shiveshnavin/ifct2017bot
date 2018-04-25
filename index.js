@@ -13,7 +13,9 @@ const X = express();
 
 X.use(bodyParser.json());
 X.use(bodyParser.urlencoded({extended: true}));
-X.all('/dialogflow', dialogflow);
+X.all('/dialogflow', (req, res) => {
+  dialogflow(req.body).then((ans) => res.json(ans));
+});
 X.all('/alexa', (req, res) => {
   var h = req.headers;
   alexaVerifier(h.signaturecertchainurl, h.signature, JSON.stringify(req.body), (err) => {
