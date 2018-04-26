@@ -23,6 +23,278 @@ Say:
 When you are done talking to me, say "Bye / Stop".
 
 
+[[help_query]]
+You can ask like:
+- Show Foods with lowest Free Sugars?
+- Find Leafy Vegetables with highest Vitamin A?
+- Query sum of Calcium in Food grouped by Food Group.
+
+
+[[help_description]]
+- For Black Amaranth seed, ask "Food composition for Black Amaranth seed."
+- For Pale brown Amaranth seed, ask "Food nutrients of Pale brown Amaranth seed."
+- For Bajra, ask "Composition of Bajra."
+- For Barley, ask "Nutrients of Barley."
+- For Jowar, ask "Local name of Jowar."
+- For Dry Maize, ask "Scientific name of Dry Maize."
+- For Local tender Maize, "Food name for Local tender Maize."
+- For Sweet tender Maize, "Food code for Sweet tender Maize."
+- For Quinoa, "Name of Quinoa."
+- For Ragi, "Code of Ragi."
+- For Rice flakes, "Description of Rice flakes."
+- For Rice puffed, "Details for Rice puffed."
+- For Brown raw Rice, "Picture of Brown raw Rice."
+
+
+[[help_column]]
+- For Amino acid, ask "Describe food component Amino acid."
+- For Available carbohydrate, ask "Explain component Available carbohydrate."
+- For Cholesterol, ask "Describe column Cholesterol."
+- For Dietary fiber, ask "Food component Dietary fiber."
+- For Energy, ask "Component Energy."
+- For Fatty acid, ask "Column Fatty acid."
+- For Folate, ask "Details of Folate."
+- For Mineral, ask "Know about Mineral."
+- For Oligosaccharide, ask "What is Oligosaccharide?"
+
+
+[[help_columns]]
+Here is the columns available for each food:
+- Food Code
+- Food Name
+- Scientific Name
+- Local Name
+- Food Group
+- No. of Regions
+- Moisture
+- Protein
+- Ash
+- Total Fat
+- Total Dietary Fiber
+- Insoluble Dietary Fiber
+- Soluble Dietary Fiber
+- Carbohydrate
+- Energy
+- Thiamine (B1)
+- Riboflavin (B2)
+- Niacin (B3)
+- Pantothenic acid (B5)
+- Total B6
+- Biotin (B7)
+- Total Folates (B9)
+- Total Ascorbic acid
+- Retinol
+- Ergocalciferol (D2)
+- Cholecalciferol (D3)
+- 25-OH-D3
+- α-Tocopherol
+- β-Tocopherol
+- γ-Tocopherol
+- δ-Tocopherol
+- α-Tocotrienol
+- β-Tocotrienol
+- γ-Tocotrienol
+- δ-Tocotrienol
+- α-Tocopherol equivalent
+- Phylloquinones (K1)
+- Menaquinones (K2)
+- Lutein
+- Zeaxanthin
+- β-Cryptoxanthin
+- Lycopene
+- γ-Carotene
+- α-Carotene
+- β-Carotene
+- Total Carotenoids
+- Aluminium (Al)
+- Arsenic (As)
+- Cadmium (Cd)
+- Calcium (Ca)
+- Chromium (Cr)
+- Cobalt (Co)
+- Copper (Cu)
+- Iron (Fe)
+- Lead (Pb)
+- Lithium (Li)
+- Magnesium (Mg)
+- Manganese (Mn)
+- Mercury (Hg)
+- Molybdenum (Mo)
+- Nickel (Ni)
+- Phophorus (P)
+- Potassium (K)
+- Selenium (Se)
+- Sodium (Na)
+- Zinc (Zn)
+- Total Available CHO
+- Total Starch
+- Fructose
+- Glucose
+- Sucrose
+- Maltose
+- Total Free Sugars
+- Lactose Content
+- Butyric acid (C4:0)
+- Caproic acid (C6:0)
+- Caprylic acid (C8:0)
+- Capric acid (C10:0)
+- Undecanoic acid (C11:0)
+- Lauric acid (C12:0)
+- Myristic acid (C14:0)
+- Pentadecanoic acid (C15:0)
+- Palmitic acid (C16:0)
+- Stearic acid (C18:0)
+- Arachidic acid (C20:0)
+- Behenic acid (C22:0)
+- Lignoceric acid (C24:0)
+- Myristoleic acid (C14:1)
+- Palmitoleic acid (C16:1)
+- Oleic acid (C18:1n9)
+- Elaidic acid (C18:1n9t)
+- Eicosenoic acid (C20:1n9)
+- Erucic acid (C22:1n9)
+- Nervonic acid (C24:1n9)
+- Linoleic acid (C18:2n6)
+- Eicosadienoic acid (C20:2)
+- Docosadienoic acid (C22:2)
+- α-Linolenic acid (C18:3n3)
+- Eicosatrienoic acid (C20:3n6)
+- Arachidonic acid (C20:4n6)
+- Eicosapentaenoic acid (C20:5n3)
+- Docosapentaenoic acid (C22:5n3)
+- Docosahexaenoic acid (C22:6n3)
+- Total Saturated Fatty acids (TSFA)
+- Total Monounsaturated Fatty acids (TMUFA)
+- Total Polyunsaturated Fatty acids (TPUFA)
+- Cholesterol
+- Histidine
+- Isoleucine
+- Leucine
+- Lysine
+- Methionine
+- Cysteine
+- Phenylalanine
+- Threonine
+- Tryptophan
+- Valine
+- Alanine
+- Arginine
+- Aspartic acid
+- Glutamic acid
+- Glycine
+- Proline
+- Serine
+- Tyrosine
+- Total Oxalate
+- Soluble Oxalate
+- Insoluble Oxalate
+- Cis-Aconitic acid
+- Citric acid
+- Fumaric acid
+- Malic acid
+- Quinic acid
+- Succinic acid
+- Tartaric acid
+- 3,4-Dihydroxy Benzoic acid
+- 3-Hydroxy Benzaldehyde
+- Protocatechuic acid
+- Vanillic acid
+- Gallic acid
+- Cinnamic acid
+- o-Coumaric acid
+- p-Coumaric acid
+- Caffeic acid
+- Chlorogenic acid
+- Ferulic acid
+- Apigenin
+- Apigenin-6-C-gluoside
+- Apigenin-7-O-neohesperidoside
+- Luteolin
+- Kaempferol
+- Quercetin
+- Quercetin-3-β-D-glucoside
+- Quercetin-3-O-rutinoside
+- Quercetin-3-β-galactoside
+- Isorhamnetin
+- Myricetin
+- Resvertrol
+- Hesperetin
+- Naringenin
+- Hesperdin
+- Daidzein
+- Genistein
+- (-)-Epicatechin
+- (-)-Epigallo catechin
+- (-)-Epigallo catechin 3-gallate
+- (+)-Catechin
+- (-)-Gallocatechin gallate
+- (-)-Gallocatechin
+- Syringic acid
+- Sinapinic acid
+- Ellagic acid
+- Total polyphenols
+- Raffinose
+- Stachyose
+- Verbascose
+- Ajugose
+- Campesterol
+- Stigmasterol
+- β-Sitosterol
+- Phytate
+- Total Saponin
+- Total Vitamin B
+- Total Vitamin D
+- Total Vitamin K
+- Tocopherols
+- Tocotrienols
+- Essential Amino acids
+- Conditionally essential Amino acids
+- Non-essential Amino acids
+- Total Amino acids
+- Organic acids
+- Total unsaturated Fatty acids
+- Essential Fatty acids
+- Cis ω-3 Fatty acids
+- Cis ω-6 Fatty acids
+- Cis ω-9 Fatty acids
+- Cis Monounsaturated Fatty acids
+- Trans Fatty acids
+- Oligosaccharides
+- Phytosterols
+- Essential Quantity Minerals
+- Essential Trace Minerals
+- Possibly essential Trace Minerals
+- Non-essential Trace Minerals
+- Toxic Minerals
+- Carotenes
+- Xanthophylls
+- β-Carotene equivalents
+- Total Vitamin A
+- Total Vitamins
+
+
+[[help_method]]
+- For Moisture, ask "Describe determination for Moisture."
+- For Protein, ask "Explain measurement of Protein."
+- For Ash, ask "Describe experiment for Ash."
+- For Total fat, ask "Describe analysis of Total fat."
+- For Dietary Fiber, ask "Describe method for Dietary Fiber."
+- For Soluble dietary fiber, ask "Determination of Soluble dietary fiber."
+- For Insoluble dietary fiber, ask "Measurement for Insoluble dietary fiber."
+- For Available carbohydrate, ask "Experiment for Available carbohydrate."
+- For Energy, ask "Analysis of Energy."
+- For Thiamin, ask "Method for Thiamin."
+
+
+[[help_abbreviation]]
+- For W.H.O., ask "Describe expansion for W.H.O."
+- For V.A.D., ask "Explain full form of V.A.D."
+- For U.V., ask "Expansion of U.V."
+- For U.T., ask "Full form for U.T."
+- For U., ask "Speak about U."
+- For Tel. ask, "What is Tel.?"
+
+
 [[help_about]]
 Here's how you can ask about I.F.C.T.:
 - For acknowledgements, ask "Describe your acknowledgements."
