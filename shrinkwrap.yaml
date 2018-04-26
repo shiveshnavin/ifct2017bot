@@ -1,6 +1,8 @@
 dependencies:
-  '@ifct2017/abbreviations': 0.2.1
+  '@ifct2017/abbreviations': 0.2.4
   '@ifct2017/about': 0.1.2
+  '@ifct2017/methods': 0.2.1
+  '@ifct2017/nutrients': 0.2.2
   alexa-sdk: 1.0.25
   alexa-verifier: 1.0.0
   aws-lambda-mock-context: 3.1.1
@@ -10,14 +12,32 @@ dependencies:
   node-persist: 2.1.0
   request: 2.85.0
 packages:
-  /@ifct2017/abbreviations/0.2.1:
+  /@ifct2017/abbreviations/0.2.4:
     dev: false
     resolution:
-      integrity: sha512-V6DYCoHGXix7C4u1VQ74TP/msz44GAcqYtHu0Ep9byCaFtMlyqHSgDrvsVTcxZoA4gktbIOxCAPSIafD6xKekw==
+      integrity: sha512-5YrZd1anzvyBFqbZEQsdiMDL7Jyfq5zEpjbDultv2wBmp+CGVcujeORzm+VcljQW3C6kXN94XGAhPc9Q3a7mDQ==
   /@ifct2017/about/0.1.2:
     dev: false
     resolution:
       integrity: sha512-ppRD7cEGXC/029lx1D62aLzQux4vVI5m3cGZ/WdEs/4+NL+9Q6NZ0O5dMKZD1hksfHWGHTKTABZiv4ABifOx5A==
+  /@ifct2017/columns/0.2.1:
+    dependencies:
+      lunr: 2.1.6
+    dev: false
+    resolution:
+      integrity: sha512-qUmQkw3pP/b5HHQPUIYi+oDjcjml10bDxe7IRmPnev6HYEHPBMGtK5aCsHcdLns3EA6/Uy9KNUffLdhMDcE0hg==
+  /@ifct2017/methods/0.2.1:
+    dependencies:
+      '@ifct2017/columns': 0.2.1
+    dev: false
+    resolution:
+      integrity: sha512-E5HBu512gRGXhnELnnIMV979RNr4sMdiTzJ2mJWxO2T4+RF/mQG1EEB79wQgNeHx8Wh2lp8d2Vfb3pTtGtyvcw==
+  /@ifct2017/nutrients/0.2.2:
+    dependencies:
+      '@ifct2017/columns': 0.2.1
+    dev: false
+    resolution:
+      integrity: sha512-U4uDOGZC+k0l+9A4//osLRzym9i5S7FyZhcHha3GIKXH1wSnMCqL9cssIZ1SjWpkOMvbhlOUWCeAlyX91mKGUA==
   /accepts/1.3.5:
     dependencies:
       mime-types: 2.1.18
@@ -582,6 +602,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-svL3uiZf1RwhH+cWrfZn3A4+U58wbP0tGVTLQPbjplZxZ8ROD9VLuNgsRniTlLe7OlSqR79RUehXgpBW/s0IQw==
+  /lunr/2.1.6:
+    dev: false
+    resolution:
+      integrity: sha512-ydJpB8CX8cZ/VE+KMaYaFcZ6+o2LruM6NG76VXdflYTgluvVemz1lW4anE+pyBbLvxJHZdvD1Jy/fOqdzAEJog==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -996,8 +1020,10 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 4
 shrinkwrapVersion: 3
 specifiers:
-  '@ifct2017/abbreviations': ^0.2.1
+  '@ifct2017/abbreviations': ^0.2.4
   '@ifct2017/about': ^0.1.2
+  '@ifct2017/methods': ^0.2.1
+  '@ifct2017/nutrients': ^0.2.2
   alexa-sdk: ^1.0.25
   alexa-verifier: ^1.0.0
   aws-lambda-mock-context: ^3.1.1

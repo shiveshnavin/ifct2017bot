@@ -58,12 +58,12 @@ function SessionEndedRequest() {
   this.emit(stop(this), message('stop'));
 };
 
-function Unhandled() {
+async function Unhandled() {
   var int = this.event.request.intent;
   if(!int || !int.slots) return this.emit(':tell', message('stop'));
   var nam = int.name, ps = parameters(int.slots);
   console.log(`ALEXA.${nam}>>`, ps);
-  var out = intent(nam, ps);
+  var out = await intent(nam, ps)||message('fallback');
   console.log(`ALEXA.${nam}<< "${out}"`);
   this.emit(tell(this), out);
 };

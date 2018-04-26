@@ -1,0 +1,126 @@
+[[help]]
+The Indian Food Composition Tables 2017 provides nutritional information on 151 discrete food components for 528 key foods. IFCT provides data of regular nutrients in foods complete in all respect and also on a whole range of bioactive substances. Vitamin D2 content in plant foods is presented for the first time in the world. The tables contain data on oligosaccharides, phytosterols, organic acids and individual polyphenols. It also embodies an exhaustive database on amino acid and fatty acid profiles of various foods. Except for eggs, all other food component data are for foods in the raw form.
+
+You can try asking:
+- Show Foods with lowest Free Sugars?
+- Find Leafy Vegetables with highest Vitamin A?
+- Query sum of Calcium in Food grouped by Food Group.
+- What is Ragi?
+- Say about Green apple.
+- Describe Analysis for measuring Total fat?
+- Explain food component Thiamine.
+- Full form of F.A.O.?
+- Describe Who is the father of nutrition in India?
+- Explain The situation of India in 1937?
+
+Say:
+- "Help Query"
+- "Help Food"
+- "Help Nutrients"
+- "Help Methods"
+- "Help Abbreviations"
+- Or, "Help I.F.C.T." to know more.
+When you are done talking to me, say "Bye / Stop".
+
+
+[[help_about]]
+Here's how you can ask about I.F.C.T.:
+- For acknowledgements, ask "Describe your acknowledgements."
+- For challenges faced, ask "Explain challenges faced in writing you."
+- For data description, ask "Explain what nutritional dat do you provide?"
+- For data source, ask "Describe your source of data."
+- For food components, ask "Describe food components obtained."
+- For food form, ask "Describe form in which foods are measured."
+- For food groups, ask "Describe what food groups are there?"
+- For funded by, ask "Describe which organization funds you?"
+- For interesting, ask "Describe interesting things listed here."
+- For learn more, ask "Explain how can i learn more?"
+- For limitations, ask "Explain what are your limitations?"
+- For father, ask "Describe who is the father of nutrition in India?"
+- For published by, ask "Describe who is your publisher?"
+- For started why, ask "Explain why did people need you?"
+- For supported by, ask "Describe who are you supported by?"
+- For users, ask "Explain who are your users?"
+- For uses, ask "Explain what are your use cases?"
+- For what, ask "Explain what can i know from you?"
+- For when, ask "Describe me your publication years."
+- For 1937 event, ask "Explain what happened in 1937?"
+- For 1951 event, ask "Explain what was the scenario in 1951?"
+- For 1963 event, ask "Explain what was happening around 1960?"
+- For 1971 event, ask "Explain the situation in the year 1971"
+- For 1989 event, ask "Explain what was goin on around 1980?"
+- For 2017 event, ask "Explain the events in 2017?"
+
+
+[[welcome:<hr>]]
+Hi! You can ask me about:
+- Composition Query
+- Raw Food
+- Its Nutrients
+- Analysis methods
+- Abbreviations
+- Or, I.F.C.T.
+
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
+<hr>
+Hello! You can ask me about:
+- Composition Query
+- Raw Food
+- Its Nutrients
+- Analysis methods
+- Abbreviations
+- Or, I.F.C.T.
+
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
+<hr>
+Good day! You can ask me about:
+- Composition Query
+- Raw Food
+- Its Nutrients
+- Analysis methods
+- Abbreviations
+- Or, I.F.C.T.
+
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
+<hr>
+Greetings! You can ask me about:
+- Composition Query
+- Raw Food
+- Its Nutrients
+- Analysis methods
+- Abbreviations
+- Or, I.F.C.T.
+
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
+
+
+[[stop:]]
+Goodbye!
+Bye!
+Tata!
+Alvida!
+
+
+[[fallback:]]
+I didn't get that. Can you say it again?
+I missed what you said. Say it again?
+Sorry, could you say that again?
+Sorry, can you say that again?
+Can you say that again?
+Sorry, I didn't get that.
+Sorry, what was that?
+One more time?
+What was that?
+Say that again?
+I didn't get that.
+I missed that.
+
+

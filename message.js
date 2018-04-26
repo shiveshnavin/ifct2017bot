@@ -14,8 +14,7 @@ function read(txt, z=new Map()) {
 };
 
 const MAP = new Map();
-for(var f of fs.readdirSync('message'))
-  read(fs.readFileSync(path.join('message', f), 'utf8'), MAP);
+read(fs.readFileSync('message.txt', 'utf8'), MAP);
 
 function message(typ, obj={}) {
   var fmts = MAP.get(typ), fmt = fmts[Math.floor(Math.random()*fmts.length)];
