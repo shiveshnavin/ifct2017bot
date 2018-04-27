@@ -1,0 +1,10 @@
+{fullform} of {text}
+{fullform} for {text}
+{convey} {fullform} of {text}
+{convey} {fullform} for {text}
+{convey} {me} {fullform} of {text}
+{convey} {me} {fullform} for {text}
+{convey} {on} {fullform} of {text}
+{convey} {on} {fullform} for {text}
+{convey} {me} {on} {fullform} of {text}
+{convey} {me} {on} {fullform} for {text}
