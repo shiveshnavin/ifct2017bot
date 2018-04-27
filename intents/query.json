@@ -1,0 +1,14 @@
+[
+  "select {text}",
+  "query {text}",
+  "hunt {text}",
+  "look {text}",
+  "scout {text}",
+  "probe {text}",
+  "detect {text}",
+  "locate {text}",
+  "discover {text}",
+  "explore {text}",
+  "find {text}",
+  "search {text}"
+]

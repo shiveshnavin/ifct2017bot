@@ -1,0 +1,12 @@
+select
+query
+hunt
+look
+scout
+probe
+detect
+locate
+discover
+explore
+find
+search
