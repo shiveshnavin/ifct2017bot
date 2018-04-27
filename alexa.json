@@ -1,0 +1,190 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "indian food composition",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "help",
+                        "what do you do",
+                        "what can i do",
+                        "how to speak",
+                        "how to use",
+                        "what can you do"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "tata",
+                        "goodbye",
+                        "bye",
+                        "break",
+                        "return",
+                        "stop",
+                        "terminate",
+                        "end",
+                        "finish",
+                        "complete",
+                        "over",
+                        "done",
+                        "got it"
+                    ]
+                },
+                {
+                    "name": "ask_abbreviation",
+                    "slots": [
+                        {
+                            "name": "text",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "full form of {text}",
+                        "expansion of {text}",
+                        "explain full form of {text}",
+                        "describe full form of {text}",
+                        "explain expansion of {text}",
+                        "describe expansion of {text}"
+                    ]
+                },
+                {
+                    "name": "ask_column",
+                    "slots": [
+                        {
+                            "name": "text",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "column {text}",
+                        "component {text}",
+                        "food component {text}",
+                        "explain column {text}",
+                        "describe column {text}",
+                        "explain component {text}",
+                        "describe component {text}",
+                        "explain food fomponent {text}",
+                        "describe food component {text}"
+                    ]
+                },
+                {
+                    "name": "ask_method",
+                    "slots": [
+                        {
+                            "name": "text",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "method for {text}",
+                        "analysis for {text}",
+                        "experiment for {text}",
+                        "measurement of {text}",
+                        "determination of {text}",
+                        "explain method for {text}",
+                        "describe method for {text}",
+                        "explain analysis for {text}",
+                        "describe analysis for {text}",
+                        "explain experiment for {text}",
+                        "describe experiment for {text}",
+                        "explain measurement of {text}",
+                        "describe measurement of {text}",
+                        "explain determination of {text}",
+                        "describe determination of {text}"
+                    ]
+                },
+                {
+                    "name": "ask_description",
+                    "slots": [
+                        {
+                            "name": "text",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "image of {text}",
+                        "picture of {text}",
+                        "details of {text}",
+                        "description of {text}",
+                        "code of {text}",
+                        "name of {text}",
+                        "food code of {text}",
+                        "food name of {text}",
+                        "scientific name of {text}",
+                        "local name of {text}",
+                        "nutrients of {text}",
+                        "composition of {text}",
+                        "food nutrients of {text}",
+                        "food composition of {text}"
+                    ]
+                },
+                {
+                    "name": "ask_any",
+                    "slots": [
+                        {
+                            "name": "text",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "{text} mean",
+                        "{text} is what",
+                        "about {text}",
+                        "what is {text}",
+                        "say about {text}",
+                        "tell about {text}",
+                        "know about {text}",
+                        "speak about {text}",
+                        "details of {text}",
+                        "description of {text}"
+                    ]
+                },
+                {
+                    "name": "about",
+                    "slots": [
+                        {
+                            "name": "text",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "narrate {text}",
+                        "discuss {text}",
+                        "explain {text}",
+                        "describe {text}"
+                    ]
+                },
+                {
+                    "name": "query",
+                    "slots": [
+                        {
+                            "name": "text",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "list {text}",
+                        "reveal {text}",
+                        "disclose {text}",
+                        "display {text}",
+                        "show {text}",
+                        "detect {text}",
+                        "locate {text}",
+                        "discover {text}",
+                        "explore {text}",
+                        "find {text}",
+                        "search {text}",
+                        "select {text}"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
