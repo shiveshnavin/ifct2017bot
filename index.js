@@ -14,8 +14,9 @@ const ifct2017 = require('ifct2017');
 
 const E = process.env;
 const X = express();
+var dburl = E.DATABASE_URL;
 var server = http.createServer(X);
-var db = new pg.Pool(pgconfig(E.DATABASE_URL));
+var db = new pg.Pool(pgconfig(dburl+(dburl.includes('localhost:')? '':'?ssl=true')));
 
 
 async function setupData() {

@@ -17,7 +17,7 @@
     "pg": "^7.4.3",
     "pg-connection-string": "^2.0.0",
     "natural": "^0.6.1",
-    "ifct2017": "^0.1.6",
+    "ifct2017": "^0.1.9",
     "sql-extra": "^0.1.7"
   },
   "engines": {

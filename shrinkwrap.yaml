@@ -5,7 +5,7 @@ dependencies:
   aws-lambda-mock-context: 3.1.1
   body-parser: 1.18.3
   express: 4.16.3
-  ifct2017: 0.1.6
+  ifct2017: 0.1.9
   natural: 0.6.1
   node-persist: 3.0.1
   pg: 7.4.3
@@ -30,14 +30,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-twst47jvqI/dBY561lj8pgx+lFn0amAppPUqIilEi03qtMNMdF0R43AEBw8Au2EEy98JajcVa0FbqwEVO4fhTw==
-  /@ifct2017/codes/0.2.6:
+  /@ifct2017/codes/0.2.7:
     dependencies:
       csv-parse: 2.4.0
       lunr: 2.2.1
       sql-extra: 0.1.7
     dev: false
     resolution:
-      integrity: sha512-ZZNZXd/U8yp50wpmmxIm/YYm7gi/qG5XHH3g8t2YEDL1IXZ1a+xxhjdlT1Lp3YRndEOJKfSbsafDARiZfUjYCQ==
+      integrity: sha512-zVBP7D2Wd+uRRrVcPs5cH1nb30Yhd9mgzWw8CI5xHCQNkpw9dFhfhQYC/vXt2DCJKgy2xjdTId5WiIMMESFPmQ==
   /@ifct2017/columns/0.2.4:
     dependencies:
       lunr: 2.2.1
@@ -52,14 +52,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-5z2uvvK0Nl7WWTYVD+/epWOya/LnkIyxJxzKGG8OZdOQI0evm+f4zGMD2eChNJfons8ASX116nyjwCjMwHteaA==
-  /@ifct2017/compositions/0.2.15:
+  /@ifct2017/compositions/0.2.16:
     dependencies:
       csv-parse: 2.4.0
       lunr: 2.2.1
       sql-extra: 0.1.7
     dev: false
     resolution:
-      integrity: sha512-iAULwAdk7ukyqlfwQ3pj7IWEEqncn+4oux7tKScAys2Kmn/U7ozm94QGMGUetnh+u24hyi7iB9peSrJAiEeZFw==
+      integrity: sha512-WlgqcbPi0Yknc8qSxPwnXmST4xXBxY2brzm4PGQH5TJnDCRlqP65IUCJRYMYw1q9+MulTFE9qZf5SO5YBoCOqg==
   /@ifct2017/contents/0.2.6:
     dependencies:
       lunr: 2.2.1
@@ -866,15 +866,15 @@ packages:
     dev: false
     resolution:
       integrity: sha1-vjPUCsEO8ZJnAfbwii2G+/0a0+Q=
-  /ifct2017/0.1.6:
+  /ifct2017/0.1.9:
     dependencies:
       '@ifct2017/abbreviations': 0.2.7
       '@ifct2017/about': 0.1.3
       '@ifct2017/carbohydrates': 0.2.4
-      '@ifct2017/codes': 0.2.6
+      '@ifct2017/codes': 0.2.7
       '@ifct2017/columns': 0.2.4
       '@ifct2017/compositingcentres': 0.2.6
-      '@ifct2017/compositions': 0.2.15
+      '@ifct2017/compositions': 0.2.16
       '@ifct2017/contents': 0.2.6
       '@ifct2017/descriptions': 0.2.7
       '@ifct2017/energies': 0.2.6
@@ -889,7 +889,7 @@ packages:
       '@ifct2017/samplingunits': 0.2.5
     dev: false
     resolution:
-      integrity: sha512-kk3GalXwrf/RjRbh8GBjty43dEVjD+0l+WR/9yQseffwiY3AVzvT6VYRUrZOw1ud+rJLW304vg5ko7cK+K8rqg==
+      integrity: sha512-aHY1gFbMLvZmLuXHXEP2Xo3sMCUdtn0n1q0ChILzK10SVttbYia6By929FCZ9pDgdBESjVnQhQoeVXJI4nMihg==
   /inherits/2.0.3:
     dev: false
     resolution:
@@ -1814,7 +1814,7 @@ specifiers:
   aws-lambda-mock-context: ^3.1.1
   body-parser: ^1.18.3
   express: ^4.16.3
-  ifct2017: ^0.1.6
+  ifct2017: ^0.1.9
   natural: ^0.6.1
   node-persist: ^3.0.1
   pg: ^7.4.3
