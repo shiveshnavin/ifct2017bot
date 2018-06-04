@@ -12,7 +12,6 @@ function tell(out, req) {
 
 function DefaultWelcomeIntent(req) {
   LAUNCHED.add(req.session);
-  console.log(req.session);
   return Promise.resolve(null);
 };
 

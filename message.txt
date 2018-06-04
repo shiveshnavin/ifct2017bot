@@ -1,6 +1,131 @@
-[[help]]
-The Indian Food Composition Tables 2017 provides nutritional information on 151 discrete food components for 528 key foods. IFCT provides data of regular nutrients in foods complete in all respect and also on a whole range of bioactive substances. Vitamin D2 content in plant foods is presented for the first time in the world. The tables contain data on oligosaccharides, phytosterols, organic acids and individual polyphenols. It also embodies an exhaustive database on amino acid and fatty acid profiles of various foods. Except for eggs, all other food component data are for foods in the raw form.
+[[welcome.type]]
+ListTemplate1
+[[welcome.title]]
+Indian Food Composition
+[[welcome.listItems.textContent.primaryText:]]
+Composition Query
+Raw Food
+Nutrient description
+Nutrient List
+Analysis methods
+Abbreviations
+About I.F.C.T.
+[[welcome.speech:<hr>]]
+Hi! You can ask me about:
+- Composition Query,
+- Raw Food,
+- Nutrient description,
+- Nutrient List,
+- Analysis methods,
+- Abbreviations,
+- Or, About I.F.C.T.
+<break time="1s"/>
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
+<hr>
+Hello! You can ask me about:
+- Composition Query,
+- Raw Food,
+- Nutrient description,
+- Nutrient List,
+- Analysis methods,
+- Abbreviations,
+- Or, About I.F.C.T.
+<break time="1s"/>
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
+<hr>
+Good day! You can ask me about:
+- Composition Query,
+- Raw Food,
+- Nutrient description,
+- Nutrient List,
+- Analysis methods,
+- Abbreviations,
+- Or, About I.F.C.T.
+<break time="1s"/>
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
+<hr>
+Greetings! You can ask me about:
+- Composition Query,
+- Raw Food,
+- Nutrient description,
+- Nutrient List,
+- Analysis methods,
+- Abbreviations,
+- Or, About I.F.C.T.
+<break time="1s"/>
+Say:
+- "Help" to know more
+- Or, "Done / Got it" when you are done.
 
+
+[[stop.speech:]]
+Goodbye!
+Bye!
+Tata!
+Alvida!
+
+
+[[fallback.speech:]]
+I didn't get that. Can you say it again?
+I missed what you said. Say it again?
+Sorry, could you say that again?
+Sorry, can you say that again?
+Can you say that again?
+Sorry, I didn't get that.
+Sorry, what was that?
+One more time?
+What was that?
+Say that again?
+I didn't get that.
+I missed that.
+
+
+[[more.speech:]]
+Knowledge is power, ask me more.
+What else do you want to know?
+Anything else?
+Something else?
+What's next?
+What else?
+
+
+[[help.type]]
+ListTemplate1
+[[help.title]]
+Help
+[[help.listItems.textContent.primaryText:]]
+Query
+Query
+Query
+Food
+Food
+Experiment
+Nutrient
+Nutrient list
+Abbreviation
+About
+About
+[[help.listItems.textContent.secondaryText:]]
+Show Foods with lowest Free Sugars?
+Find Leafy Vegetables with highest Vitamin A?
+Query sum of Calcium in Food grouped by Food Group.
+What is Ragi?
+Say about Green apple.
+Describe Analysis for measuring Total fat?
+Explain food component Thiamine.
+Full form of F.A.O.?
+Describe Who is the father of nutrition in India?
+Explain The situation of India in 1937?
+
+[[help.speech]]
+The Indian Food Composition Tables 2017 provides nutritional information on 151 discrete food components for 528 key foods. IFCT provides data of regular nutrients in foods complete in all respect and also on a whole range of bioactive substances. Vitamin D2 content in plant foods is presented for the first time in the world. The tables contain data on oligosaccharides, phytosterols, organic acids and individual polyphenols. It also embodies an exhaustive database on amino acid and fatty acid profiles of various foods. Except for eggs, all other food component data are for foods in the raw form.
+<break time="1s"/>
 You can try asking:
 - Show Foods with lowest Free Sugars?
 - Find Leafy Vegetables with highest Vitamin A?
@@ -12,41 +137,38 @@ You can try asking:
 - Full form of F.A.O.?
 - Describe Who is the father of nutrition in India?
 - Explain The situation of India in 1937?
-
+<break time="1s"/>
 Say:
-- "Help Query"
-- "Help Food"
-- "Help Nutrients"
-- "Help Methods"
-- "Help Abbreviations"
-- Or, "Help I.F.C.T." to know more.
+- "Help Query",
+- "Help Food",
+- "Help Column",
+- "Help Nutrients",
+- "Help Methods",
+- "Help Abbreviations",
+- Or, "Help About" to know more.
 When you are done talking to me, say "Bye / Stop".
 
 
-[[help_query]]
+[[help_select.speech]]
 You can ask like:
 - Show Foods with lowest Free Sugars?
 - Find Leafy Vegetables with highest Vitamin A?
 - Query sum of Calcium in Food grouped by Food Group.
 
 
-[[help_description]]
+[[help_description.speech]]
 - For Black Amaranth seed, ask "Food composition for Black Amaranth seed."
 - For Pale brown Amaranth seed, ask "Food nutrients of Pale brown Amaranth seed."
 - For Bajra, ask "Composition of Bajra."
 - For Barley, ask "Nutrients of Barley."
-- For Jowar, ask "Local name of Jowar."
-- For Dry Maize, ask "Scientific name of Dry Maize."
-- For Local tender Maize, "Food name for Local tender Maize."
-- For Sweet tender Maize, "Food code for Sweet tender Maize."
-- For Quinoa, "Name of Quinoa."
-- For Ragi, "Code of Ragi."
 - For Rice flakes, "Description of Rice flakes."
 - For Rice puffed, "Details for Rice puffed."
 - For Brown raw Rice, "Picture of Brown raw Rice."
+- For Quinoa, "Say about Quinoa."
+- For Ragi, "What is Ragi?"
 
 
-[[help_column]]
+[[help_column.speech]]
 - For Amino acid, ask "Describe food component Amino acid."
 - For Available carbohydrate, ask "Explain component Available carbohydrate."
 - For Cholesterol, ask "Describe column Cholesterol."
@@ -58,7 +180,7 @@ You can ask like:
 - For Oligosaccharide, ask "What is Oligosaccharide?"
 
 
-[[help_columns]]
+[[help_columns.speech]]
 Here is the columns available for each food:
 - Food Code
 - Food Name
@@ -273,7 +395,33 @@ Here is the columns available for each food:
 - Total Vitamins
 
 
-[[help_method]]
+[[help_method.type]]
+ListTemplate1
+[[help_method.title]]
+Help: Method
+[[help_method.listItems.textContent.primaryText:]]
+Moisture
+Protein
+Ash
+Total fat
+Dietary Fiber
+Soluble dietary fiber
+Insoluble dietary fiber
+Available carbohydrate
+Energy
+Thiamin
+[[help_method.listItems.textContent.secondaryText:]]
+Describe determination for Moisture.
+Explain measurement of Protein.
+Describe experiment for Ash.
+Describe analysis of Total fat.
+Describe method for Dietary Fiber.
+Determination of Soluble dietary fiber.
+Measurement for Insoluble dietary fiber.
+Experiment for Available carbohydrate.
+Analysis of Energy.
+Method for Thiamin.
+[[help_method.speech]]
 - For Moisture, ask "Describe determination for Moisture."
 - For Protein, ask "Explain measurement of Protein."
 - For Ash, ask "Describe experiment for Ash."
@@ -286,7 +434,25 @@ Here is the columns available for each food:
 - For Thiamin, ask "Method for Thiamin."
 
 
-[[help_abbreviation]]
+[[help_abbreviation.type]]
+ListTemplate1
+[[help_abbreviation.title]]
+Help: Abbreviation
+[[help_abbreviation.listItems.textContent.primaryText:]]
+W.H.O.
+V.A.D.
+U.V.
+U.T.
+U.
+Tel.
+[[help_abbreviation.listItems.textContent.secondaryText:]]
+Describe expansion for W.H.O.
+Explain full form of V.A.D.
+Expansion of U.V.
+Full form for U.T.
+Speak about U.
+What is Tel.?
+[[help_abbreviation.speech]]
 - For W.H.O., ask "Describe expansion for W.H.O."
 - For V.A.D., ask "Explain full form of V.A.D."
 - For U.V., ask "Expansion of U.V."
@@ -295,7 +461,63 @@ Here is the columns available for each food:
 - For Tel. ask, "What is Tel.?"
 
 
-[[help_about]]
+[[help_about.type]]
+ListTemplate1
+[[help_about.title]]
+Help: About
+[[help_about.listItems.textContent.primaryText:]]
+Acknowledgements
+Challenges faced
+Data description
+Data source
+Food components
+Food form
+Food groups
+Funded by
+Interesting
+Learn more
+Limitations
+Father
+Published by
+Started why
+Supported by
+Users
+Uses
+What
+When
+1937 event
+1951 event
+1963 event
+1971 event
+1989 event
+2017 event
+[[help_about.listItems.textContent.secondaryText]]
+Describe your acknowledgements.
+Explain challenges faced in writing you.
+Explain what nutritional dat do you provide?
+Describe your source of data.
+Describe food components obtained.
+Describe form in which foods are measured.
+Describe what food groups are there?
+Describe which organization funds you?
+Describe interesting things listed here.
+Explain how can i learn more?
+Explain what are your limitations?
+Describe who is the father of nutrition in India?
+Describe who is your publisher?
+Explain why did people need you?
+Describe who are you supported by?
+Explain who are your users?
+Explain what are your use cases?
+Explain what can i know from you?
+Describe me your publication years.
+Explain what happened in 1937?
+Explain what was the scenario in 1951?
+Explain what was happening around 1960?
+Explain the situation in the year 1971
+Explain what was goin on around 1980?
+Explain the events in 2017?
+[[help_about.speech]]
 Here's how you can ask about I.F.C.T.:
 - For acknowledgements, ask "Describe your acknowledgements."
 - For challenges faced, ask "Explain challenges faced in writing you."
@@ -322,77 +544,3 @@ Here's how you can ask about I.F.C.T.:
 - For 1971 event, ask "Explain the situation in the year 1971"
 - For 1989 event, ask "Explain what was goin on around 1980?"
 - For 2017 event, ask "Explain the events in 2017?"
-
-
-[[welcome:<hr>]]
-Hi! You can ask me about:
-- Composition Query
-- Raw Food
-- Its Nutrients
-- Analysis methods
-- Abbreviations
-- Or, I.F.C.T.
-
-Say:
-- "Help" to know more
-- Or, "Done / Got it" when you are done.
-<hr>
-Hello! You can ask me about:
-- Composition Query
-- Raw Food
-- Its Nutrients
-- Analysis methods
-- Abbreviations
-- Or, I.F.C.T.
-
-Say:
-- "Help" to know more
-- Or, "Done / Got it" when you are done.
-<hr>
-Good day! You can ask me about:
-- Composition Query
-- Raw Food
-- Its Nutrients
-- Analysis methods
-- Abbreviations
-- Or, I.F.C.T.
-
-Say:
-- "Help" to know more
-- Or, "Done / Got it" when you are done.
-<hr>
-Greetings! You can ask me about:
-- Composition Query
-- Raw Food
-- Its Nutrients
-- Analysis methods
-- Abbreviations
-- Or, I.F.C.T.
-
-Say:
-- "Help" to know more
-- Or, "Done / Got it" when you are done.
-
-
-[[stop:]]
-Goodbye!
-Bye!
-Tata!
-Alvida!
-
-
-[[fallback:]]
-I didn't get that. Can you say it again?
-I missed what you said. Say it again?
-Sorry, could you say that again?
-Sorry, can you say that again?
-Can you say that again?
-Sorry, I didn't get that.
-Sorry, what was that?
-One more time?
-What was that?
-Say that again?
-I didn't get that.
-I missed that.
-
-

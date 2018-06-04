@@ -6,29 +6,42 @@
     "start": "node ./"
   },
   "dependencies": {
-    "express": "^4.16.3",
-    "body-parser": "^1.18.2",
     "alexa-sdk": "^1.0.25",
     "aws-lambda-mock-context": "^3.1.1",
-    "alexa-verifier": "^1.0.0",
-    "request": "^2.85.0",
-    "node-persist": "^2.1.0",
-    "natural": "^0.5.6",
-    "@ifct2017/abbreviations": "^0.2.4",
-    "@ifct2017/about": "^0.1.2",
-    "@ifct2017/methods": "^0.2.1",
-    "@ifct2017/nutrients": "^0.2.2"
+    "alexa-verifier": "^2.0.1",
+    "@slack/client": "^4.2.2",
+    "express": "^4.16.3",
+    "body-parser": "^1.18.3",
+    "request": "^2.87.0",
+    "node-persist": "^3.0.1",
+    "pg": "^7.4.3",
+    "pg-connection-string": "^2.0.0",
+    "natural": "^0.6.1",
+    "ifct2017": "^0.1.6",
+    "sql-extra": "^0.1.7"
   },
   "engines": {
-    "node": "9.x"
+    "node": "10.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/my-glitch-app"
+    "url": "https://glitch.com/edit/#!/ifct2017bot"
   },
   "license": "MIT",
   "keywords": [
-    "node",
-    "glitch",
-    "express"
+    "ifct",
+    "2017",
+    "bot",
+    "indian",
+    "food",
+    "composition",
+    "tables",
+    "website",
+    "google",
+    "assistant",
+    "action",
+    "amazon",
+    "alexa",
+    "skill",
+    "slack"
   ]
 }

@@ -7,10 +7,25 @@ const message = require('./message');
 const nlp = require('./nlp');
 
 const SERVICE_NLP = 'https://ifct2017.herokuapp.com/nlp/';
+const HELP_REGEX = {
+  abbreviation: /abbreviat|short|acronym|full|expan/i,
+  columns: /columns|nutrients|components|fields|list/i,
+  column: /column|nutrient|component|field/i,
+  method: /method|analy|experiment|measure|determin/i,
+  description: /descripti|detail|food|composition/i,
+  about: /about|describe|explain|narrate|discuss|i[\.\-\s]*f[\.\-\s]*c[\.\-\s]*t[\.\-\s]*/i,
+  select: /select|query|hunt|look|scout|probe|detect|locate|discover|explore|find|search/i,
+};
 
 function fixText(txt) {
   if(txt==null) return txt;
   return txt.replace(/\s*%/g, ' percent').replace(/\s*\&\s*/g, ' and ');
+};
+
+function help(txt) {
+  for(var k in HELP_REGEX)
+    if(HELP_REGEX[k].test(txt)) return message('help_'+k);
+  return null;
 };
 
 function ask_abbreviation(txt) {
@@ -54,14 +69,15 @@ function query(txt) {
   });
 };
 
-async function intent(int, par) {
-  if(int==='about') return fixText(about(par.text));
+function intent(int, par) {
+  if(int==='help') return help(par.text);
   if(int==='ask_abbreviation') return ask_abbreviation(par.text);
   if(int==='ask_column') return ask_column(par.text);
   if(int==='ask_method') return ask_method(par.text);
   if(int==='ask_description') return ask_description(par.text);
   if(int==='ask_any') return ask_any(par.text);
-  if(int==='query') return query(par.text);
+  if(int==='about') return fixText(about(par.text));
+  if(int==='select') return query(par.text);
   return null;
 };
 module.exports = intent;

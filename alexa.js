@@ -4,17 +4,25 @@ const intent = require('./intent');
 
 const E = process.env;
 const LAUNCHED = new Set();
+const makeImage = Alexa.utils.ImageUtils.makeImage;
+const makeRichText = (txt) => Alexa.utils.TextUtils.makeRichText(message.toRich(txt));
+const TITLE = 'Indian Food Composition';
+const BACKGROUND = 'https://i.imgur.com/7mldp3G.jpg';
 
-function launch(t) {
-  LAUNCHED.add(t.event.session.sessionId);
-  return ':ask';
+function launch(txt) {
+  var bldr = new Alexa.templateBuilders.BodyTemplate1Builder();
+  var tmpl = bldr.setTitle(TITLE).setBackgroundImage(makeImage(BACKGROUND)).setTextContent(makeRichText(txt)).build(); 
+  this.response.speak(txt).renderTemplate(tmpl).shouldEndSession(false);
+  LAUNCHED.add(this.event.session.sessionId);
+  this.emit(':responseReady');
 };
-function stop(t) {
-  LAUNCHED.delete(t.event.session.sessionId);
-  return ':tell';
+function stop(txt) {
+  LAUNCHED.delete(this.event.session.sessionId);
+  this.emit(txt!=null? ':tell':':ask', txt||'');
 };
-function tell(t) {
-  return LAUNCHED.has(t.event.session.sessionId)? ':ask':':tell';
+function tell(txt) {
+  var e = LAUNCHED.has(this.event.session.sessionId)? ':ask':':tell';
+  this.emit(e, txt!=null && e===':ask'? `${txt} <break time="2s"/> ${message('more')}`:txt||message('fallback'));
 };
 
 function name(p) {
@@ -30,32 +38,37 @@ function parameters(slt) {
 
 function LaunchRequest() {
   console.log(`ALEXA.LaunchRequest`);
-  this.emit(launch(this), message('welcome'));
+  launch.call(this, message('welcome'));
 };
 
 function DefaultFallbackIntent() {
   console.log(`ALEXA.DefaultFallbackIntent`);
-  this.emit(tell(this), message('fallback'));
+  tell.call(this, message('error'));
 };
 
 function HelpIntent() {
   console.log(`ALEXA.HelpIntent`);
-  this.emit(tell(this), message('help'));
+  tell.call(this, message('help'));
 };
 
 function CancelIntent() {
   console.log(`ALEXA.CancelIntent`);
-  this.emit(stop(this), message('stop'));
+  stop.call(this, message('stop'));
 };
 
 function StopIntent() {
   console.log(`ALEXA.StopIntent`);
-  this.emit(stop(this), message('stop'));
+  stop.call(this, message('stop'));
 };
 
 function SessionEndedRequest() {
   console.log(`ALEXA.SessionEndedRequest`);
-  this.emit(stop(this), message('stop'));
+  stop.call(this, null);
+};
+
+function MoreIntent() {
+  console.log(`ALEXA.MoreIntent`);
+  tell.call(this, null);
 };
 
 async function Unhandled() {
@@ -63,15 +76,17 @@ async function Unhandled() {
   if(!int || !int.slots) return this.emit(':tell', message('stop'));
   var nam = int.name, ps = parameters(int.slots);
   console.log(`ALEXA.${nam}>>`, ps);
-  var out = await intent(nam, ps)||message('fallback');
+  var out = await intent(nam, ps);
   console.log(`ALEXA.${nam}<< "${out}"`);
-  this.emit(tell(this), out);
+  tell.call(this, out);
 };
 
 
 var handlers = {
   LaunchRequest, DefaultFallbackIntent, SessionEndedRequest,
-  'AMAZON.HelpIntent': HelpIntent, 'AMAZON.CancelIntent': CancelIntent, 'AMAZON.StopIntent': StopIntent, Unhandled
+  'AMAZON.HelpIntent': HelpIntent, 'AMAZON.CancelIntent': CancelIntent, 'AMAZON.StopIntent': StopIntent,
+  'AMAZON.MoreIntent': MoreIntent,
+  Unhandled
 };
 exports.handler = function(e, ctx, fn) {
   const alexa = Alexa.handler(e, ctx, fn);
