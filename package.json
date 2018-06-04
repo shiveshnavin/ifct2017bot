@@ -1,47 +1,27 @@
 {
-  "name": "ifct2017bot",
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "hello-express",
   "version": "0.0.1",
-  "description": "The Indian Food Composition Tables 2017 provides nutritional information on 151 discrete food components for 528 key foods.",
+  "description": "A simple Node app built on Express, instantly up and running.",
+  "main": "server.js",
   "scripts": {
-    "start": "node ./"
+    "start": "node server.js"
   },
   "dependencies": {
-    "alexa-sdk": "^1.0.25",
-    "aws-lambda-mock-context": "^3.1.1",
-    "alexa-verifier": "^2.0.1",
-    "@slack/client": "^4.2.2",
-    "express": "^4.16.3",
-    "body-parser": "^1.18.3",
-    "request": "^2.87.0",
-    "node-persist": "^3.0.1",
-    "pg": "^7.4.3",
-    "pg-connection-string": "^2.0.0",
-    "natural": "^0.6.1",
-    "ifct2017": "^0.1.9",
-    "sql-extra": "^0.1.7"
+    "express": "^4.16.3"
   },
   "engines": {
-    "node": "10.x"
+    "node": "8.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/ifct2017bot"
+    "url": "https://glitch.com/edit/#!/hello-express"
   },
   "license": "MIT",
   "keywords": [
-    "ifct",
-    "2017",
-    "bot",
-    "indian",
-    "food",
-    "composition",
-    "tables",
-    "website",
-    "google",
-    "assistant",
-    "action",
-    "amazon",
-    "alexa",
-    "skill",
-    "slack"
+    "node",
+    "glitch",
+    "express"
   ]
 }
