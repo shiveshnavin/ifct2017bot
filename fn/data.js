@@ -1,6 +1,16 @@
 const Sql = require('sql-extra');
 const ifct2017 = require('ifct2017');
 
+const COLUMNS = ifct2017.columns.corpus;
+
+
+function ansColumns(row) {
+  var z = {};
+  for(var k in row)
+    z[k] = COLUMNS.get();
+  return z;
+};
+
 async function setup(db) {
   var o = ifct2017;
   var ans = await db.query(Sql.tableExists('compositions'));
@@ -28,7 +38,7 @@ async function setup(db) {
 
 function data(db, txt) {
   var tab = txt.replace(/[\'\"]/g, '$1$1');
-  return db.query(`SELECT * FROM "${tab}";`).then(ans => ans.rows);
+  return db.query(`SELECT * FROM "${tab}";`).then(ans => ans.rows||[]);
 };
 data.setup = setup;
 module.exports = data;

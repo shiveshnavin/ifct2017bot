@@ -1,4 +1,4 @@
-const COLUMNS = require('../data').COLUMNS;
+const COLUMNS = require('ifct2017').columns.corpus;
 
 const UNIT = new Map([[0, 'g'], [3, 'mg'], [6, 'μg'], [9, 'ng']]);
 const DEFAULTUNIT = new Map([['enerc', 'kcal']]);
