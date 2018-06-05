@@ -2,6 +2,7 @@ dependencies:
   body-parser: 1.18.3
   express: 4.16.3
   ifct2017: 0.2.3
+  number-extra: 0.2.6
   pg: 7.4.3
   sql-extra: 0.1.8
 packages:
@@ -444,6 +445,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-KzJxhOiZIQEXeyhWP7XnECrNDKk=
+  /number-extra/0.2.6:
+    dev: false
+    resolution:
+      integrity: sha512-oPzZwvcOlFg5C2IhTQ9OcEtpIzc+vXL803sPJk24Amktn7TzR9/rUVd69rqr9eFfIjjg9+UXSULdnRqYapcU5A==
   /on-finished/2.3.0:
     dependencies:
       ee-first: 1.1.1
@@ -697,5 +702,6 @@ specifiers:
   body-parser: ^1.18.3
   express: ^4.16.3
   ifct2017: ^0.2.3
+  number-extra: ^0.2.3
   pg: ^7.4.3
   sql-extra: ^0.1.8
