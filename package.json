@@ -10,8 +10,8 @@
     "express": "^4.16.3",
     "body-parser": "^1.18.3",
     "pg": "^7.4.3",
-    "sql-extra": "^0.1.7",
-    "ifct2017": "^0.2.2"
+    "sql-extra": "^0.1.8",
+    "ifct2017": "^0.2.3"
   },
   "engines": {
     "node": "10.x"

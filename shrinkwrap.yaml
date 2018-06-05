@@ -1,13 +1,13 @@
 dependencies:
   body-parser: 1.18.3
   express: 4.16.3
-  ifct2017: 0.2.2
+  ifct2017: 0.2.3
   pg: 7.4.3
-  sql-extra: 0.1.7
+  sql-extra: 0.1.8
 packages:
   /@ifct2017/abbreviations/0.3.2:
     dependencies:
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-reqe/hNxLiITz4NO6Js5jsJNAFhnE9Sf+wMEAB0K2ywnH5KRn+kQG1fbv8rY3xK4vBxii0WFKgZoqk2Pmlvwjw==
@@ -15,39 +15,39 @@ packages:
     dev: false
     resolution:
       integrity: sha512-xrWbSlODDztzkvW5t8qEm0893nIMaP6Z3GrtqBBxnm9VfhAuLux4FsR5TCTVRl2GtFIYeF4KCE5f0iKOkLU9ww==
-  /@ifct2017/carbohydrates/0.3.5:
+  /@ifct2017/carbohydrates/0.3.6:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
-      integrity: sha512-vA7o5FHHkWqccxOniMQz9WipNNPXFD1woumSTUy+seVEsMYqhTkhbrSgzvL8j55NIQk95kec6buhsFdkrTo0iw==
+      integrity: sha512-Sv+5bOPfUnwzK0KC9jnoORmgfl34LKgO0BtiEugfUg1fj/NjKCPj+4gYi2nKB+GViX+KhINTFd58pNLy/zmdGw==
   /@ifct2017/codes/0.2.9:
     dependencies:
       csv-parse: 2.4.0
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-bAGy+H7r56CbqvnyMEJlQ7Air2IiX9MJn1lpgVOxhe2E5z8llnxAD8fmG/tTYBYp5MPqmOX2UIjScZrMOIOHtg==
   /@ifct2017/columns/0.2.4:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-raIIZ1FFML1tn347jhWxsFksL8yp2AWiKcrbu/6dxIa1w4uy/mD34g/hzGj9t+x5JILZ5kCL9HlDh6ZMfihn9A==
   /@ifct2017/columns/0.3.2:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-2Viady8eL1Dc9d51Z1NCjounvKm+AjewUKBxnVaIDVWLmTSpjLCnhnkXAAgisiI7qoNQRC+Fm1XhmumFj8CA+A==
   /@ifct2017/compositingcentres/0.3.2:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-Jr2FwODsyyTzqChUt+k0CXBc7SHYtSyvnUu5PUqhtl55m/En+0/OETveDODzfLUBx5qtyRq0HMVtjvxbd10IUA==
@@ -55,14 +55,14 @@ packages:
     dependencies:
       csv-parse: 2.4.0
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-1Ltyk8W5iHtqXQ3PoFQ5pa4YajSp6jQwFmxfGYGDhDwPVKlCoHKbz3iD7fYwq3ap7kXgtwxt2sJDsYrzhP6tUw==
   /@ifct2017/contents/0.3.2:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-EF8rPk5shW4PJ+iTHdRXGqOM0srf3Gf6RYIp9KkUHfjgoBpmuRRjTnbD4w08mRRyjTQM4nfhtxqrszT2mZngCQ==
@@ -70,47 +70,47 @@ packages:
     dependencies:
       csv-parse: 2.4.0
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-esadnDGjR9Ltg0m4aijvvU4XUUJLwhOMtf5gQnnN5FpWbdiIgIiOIHreJW5m/6LAsQGiKsyQUw4NiRyBKSFRig==
   /@ifct2017/energies/0.3.2:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-U+VVyDz5zNVHelaXHTLE3LIIlmWqrN77ziJm+N0QScBGKwq+cEi8ArzP8I2bVMGmFPKeIYLdjAVfP/yJlmJKJg==
   /@ifct2017/frequencydistribution/0.3.2:
     dependencies:
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-rkayt4FEGgtv7/5TGf6Mqv+qCpmfaSDd0Du4zsc+C+xaV3GGNx1x1358zJkdV8oZWmZIl8672kIzXlWzlPsuMA==
   /@ifct2017/groups/0.3.3:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-KuxpY+oxpVkNPC9x9IcnNAZ39fZ4iK0wQTqoA93H5bYvGx6uMVRCgblirz5w1gY5Az0sO/aTL3O8BdWCwRPlvA==
   /@ifct2017/jonesfactors/0.3.3:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-J0hfxKS3jrF+vIBpsEldrGqTW+Xz4AJf8n8h0jO0tlFmdVbRIed7OlJCPAx6AlaDPdoXIeuXcPXs+Bd9ymZYUA==
   /@ifct2017/languages/0.3.2:
     dependencies:
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-HTGj0Y3ZOCw0D7TuJg2T4kBXfNR6VOJZC/7pnulXr7bYphXyHp0+dyHXQWTCSSS8NIdhj56OCPbJfH70CWETVA==
   /@ifct2017/methods/0.3.2:
     dependencies:
       '@ifct2017/columns': 0.2.4
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-CCBj9QQEQ6DuXdhzUJv3t9e1w+IWMWeJX7nplscWp+F1gaiOT0u8UWUFflFVfBTRuC9vJhmRuhS5gIc7Zv18XQ==
@@ -127,14 +127,14 @@ packages:
   /@ifct2017/regions/0.3.2:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-Tae25oSy1q5N0vSE4PkR8HuGGbKvI5jm9vLnRf9I/5IlRUW1GDwPd6OGm4CBCU/LHFu6ot+R/6uvAGJBby5nrw==
   /@ifct2017/samplingunits/0.3.2:
     dependencies:
       lunr: 2.2.1
-      sql-extra: 0.1.7
+      sql-extra: 0.1.8
     dev: false
     resolution:
       integrity: sha512-6dAE0Y87YggtgbHbeiy90jWQioHrbzvrTbqy5zXCljtZQaFMQWcI7IqmtoyQVG2A4fivuv8I7LP3ALvodngSlg==
@@ -362,11 +362,11 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-neyTUVFtahjf0mB3dZT77u+8O0QB89jFdnBkd5P1JgYPbPaia3gXXOVL2fq8VyU2gMMD7SaN7QukTB/pmXYvDA==
-  /ifct2017/0.2.2:
+  /ifct2017/0.2.3:
     dependencies:
       '@ifct2017/abbreviations': 0.3.2
       '@ifct2017/about': 0.2.1
-      '@ifct2017/carbohydrates': 0.3.5
+      '@ifct2017/carbohydrates': 0.3.6
       '@ifct2017/codes': 0.2.9
       '@ifct2017/columns': 0.3.2
       '@ifct2017/compositingcentres': 0.3.2
@@ -385,7 +385,7 @@ packages:
       '@ifct2017/samplingunits': 0.3.2
     dev: false
     resolution:
-      integrity: sha512-LhSpHrQaXD+pjDynUxxo27sygzkzitRRhpjXNe5qnf2ElZwBr1u4mwizkYWUFlaRymBANRhWfqNOtJu2aXGnZw==
+      integrity: sha512-OMBwe/Mk+QNWvPkZ2vGHCzj6hyaCFg3pqG8gEkblhtF3TSDd/l2ZPPZqb5qhozJsmuv/1ok+U9Yh8hbdQPkQ+w==
   /inherits/2.0.3:
     dev: false
     resolution:
@@ -637,10 +637,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==
-  /sql-extra/0.1.7:
+  /sql-extra/0.1.8:
     dev: false
     resolution:
-      integrity: sha512-jEqVC3SrsgQiopnhZ6U4mTnPpN4Gredz93Exn6SaWi3cTvePw689S5izomz20YZ8owMw/9OeRU8TNBvPZ6X97g==
+      integrity: sha512-9j66f/Pt/aWt8yLUgAWKsOniDuyNJV+GTGeGT2lQ2C+fNS5kS+M81g1VSnncE24fJV/BVUBQCKJHYMCCbFygXg==
   /statuses/1.4.0:
     dev: false
     engines:
@@ -696,6 +696,6 @@ shrinkwrapVersion: 3
 specifiers:
   body-parser: ^1.18.3
   express: ^4.16.3
-  ifct2017: ^0.2.2
+  ifct2017: ^0.2.3
   pg: ^7.4.3
-  sql-extra: ^0.1.7
+  sql-extra: ^0.1.8
