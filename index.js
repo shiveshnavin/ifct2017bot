@@ -1,22 +1,17 @@
-// server.js
-// where your node app starts
+const express = require('express');
+const bodyParser = require('body-parser');
+const http = require('http');
 
-// init project
-var express = require('express');
-var app = express();
+const E = process.env;
+const X = express();
+var server = http.createServer(X);
 
-// we've started you off with Express, 
-// but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
-// http://expressjs.com/en/starter/static-files.html
-app.use(express.static('public'));
+X.use(bodyParser.json());
+X.use(express.static('assets', {extensions: ['html']}));
 
-// http://expressjs.com/en/starter/basic-routing.html
-app.get("/", function (request, response) {
-  response.sendFile(__dirname + '/views/index.html');
-});
 
-// listen for requests :)
-var listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+server.listen(E.PORT||80, () => {
+  var addr = server.address();
+  console.log(`SERVER: ready at port ${addr.port}`);
 });
