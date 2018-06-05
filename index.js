@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const pg = require('pg');
 const ifct2017 = require('ifct2017');
 const http = require('http');
+const data = require('./data');
 
 const E = process.env;
 const X = express();
@@ -19,3 +20,4 @@ server.listen(E.PORT||80, () => {
   var addr = server.address();
   console.log(`SERVER: ready at port ${addr.port}`);
 });
+data(db, ifct2017);
