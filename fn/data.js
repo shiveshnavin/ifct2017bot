@@ -1,7 +1,8 @@
 const Sql = require('sql-extra');
+const ifct2017 = require('ifct2017');
 
-
-async function data(db, o) {
+async function setup(db) {
+  var o = ifct2017;
   var ans = await db.query(Sql.tableExists('compositions'));
   if(ans.rows[0].exists) return console.log(`DATA: already setup`);
   await Promise.all([
@@ -24,4 +25,10 @@ async function data(db, o) {
   ]);
   console.log(`DATA: setup done`);
 };
+
+function data(db, txt) {
+  var tab = txt.replace(/[\'\"]/g, '$1$1');
+  return db.query(`SELECT * FROM "${tab}";`).then(ans => ans.rows);
+};
+data.setup = setup;
 module.exports = data;
