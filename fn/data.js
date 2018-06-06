@@ -4,7 +4,7 @@ const Sql = require('sql-extra');
 const ifct2017 = require('ifct2017');
 
 const COLUMNS = ifct2017.columns.corpus;
-const EXCLUDE_DEF = ['lang', 'tags', 'tsvector'];
+const EXCLUDE_DEF = /lang|tags|tsvector/;
 const ORDER_DEF = ['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', 'tsvector'];
 const TYPE_DEF = new Map([
   ['code', 'TEXT'],
@@ -26,28 +26,99 @@ const UNIT_MAP = new Map([
 ]);
 
 
-function colFactor(col) {
+function toBase(rows) {
+  var cols = {};
+  for(var k in rows[0])
+    cols[k] = rows.map(row => row[k]);
+  return cols;
+};
+
+function getFactor(col) {
   var max = Math.max.apply(null, col);
   return Math.min(-Math.floor(Math.log10(max+1e-10)/3)*3, 9);
 };
 
-function ansMeta(rs) {
-  var z = {};
-  if(rs.length===0) return z;
-  for(var k in rs[0]) {
+function getMeta(cols) {
+  var meta = {};
+  for(var k in cols) {
     if(k.endsWith('_e')) continue;
-    z[k] = {name: COLUMNS.get(k), type: TYPE_DEF.get(k)||'REAL'};
+    var name = COLUMNS.get(k);
+    var type = TYPE_DEF.get(k)||'REAL';
+    var factor = type==='REAL' && !UNIT_DEF.has(k)? getFactor(cols[k]):1;
+    var unit = type==='REAL'? UNIT_DEF.get(k)||UNIT_MAP.get(factor):null;
+    meta[k] = {name, type, factor, unit};
   }
-  return z;
+  return meta;
 };
 
-function ansColumns(rs) {
-  var z = {};
-  if(rs.length===0) return z;
-  for(var k in rs[0])
-    z[k] = rs.map(r => r[k]);
-  return z;
+function exclude(cols, re=EXCLUDE_DEF) {
+  var tcols = {};
+  for(var k in cols)
+    if(!re.test(k)) tcols[k] = cols[k];
+  return tcols;
 };
+
+function orderBy(cols, by, pre=ORDER_DEF) {
+  var tcols = {}, ks = [];
+  for(var k in cols)
+    if(!pre.includes(k)) ks.push(k);
+  ks = ks.sort();
+  for(var k of pre)
+    tcols[k] = cols[k];
+  for(var k of ks)
+    tcols[k] = cols[k];
+  return tcols;
+};
+
+function applyFactor(col, meta) {
+  var mul = 10**meta.factor;
+  for(var i=0, I=col.length; i<I; i++)
+    col[i] = Number.round(col[i]*mul);
+};
+
+function toValueMode(cols) {
+  var tcols = {};
+  for(var k in cols) {
+    var tk = k.replace(/_e$/, '');
+    var i = k.endsWith('_e')? 1:0;
+    tcols[tk] = tcols[tk]||[];
+    tcols[tk][i] = cols[k];
+  }
+  return tcols;
+};
+
+function toRangeMode(cols) {
+  var tcols = {};
+  for(var k in cols) {
+    if(k.endsWith('_e')) continue;
+    if(!(k+'_e' in cols)) { tcols[k] = [cols[k]]; continue; }
+    var val = cols[k], err = cols[k+'_e'], bgn = val, end = err;
+    for(var i=0, I=val.length; i<I; i++) {
+      var v = val[i], e = err[i];
+      bgn[i] = v-e; end[i] = v+e;
+    }
+    tcols[k] = [bgn, end];
+  }
+  return tcols;
+};
+
+function toTextMode(cols, meta) {
+  var tcols = {};
+  for(var k in cols) {
+    if(k.endsWith('_e')) continue;
+    var col = cols[k], cole = cols[k+'_e']||null, unit = meta[k].unit;
+    for(var i=0, I=col.length, txt=new Array(I); i<I; i++) {
+      var t = col[i].toString();
+      if(cole!=null && cole[i]>0) t += `±${cole[i]}`;
+      if(unit!=null) t += ` ${unit}`
+      txt[i] = t;
+    }
+    tcols[k] = txt;
+  }
+  return tcols;
+};
+
+
 
 async function setup(db) {
   var o = ifct2017;
