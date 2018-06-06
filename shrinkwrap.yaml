@@ -4,6 +4,7 @@ dependencies:
   ifct2017: 0.2.3
   number-extra: 0.2.6
   pg: 7.4.3
+  pg-slang: 0.1.2
   sql-extra: 0.1.8
 packages:
   /@ifct2017/abbreviations/0.3.2:
@@ -315,6 +316,25 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-Y1GUDo39ez4aHAw7MysnUD5JzYX+WaIj8I57kO3aEPT1fFRL4sr7mjei97FgnwhAyyzRYmQZaTHb2+9uZ1dPtg==
+  /flora-errors/0.7.1:
+    dependencies:
+      has: 1.0.3
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-5g3GD30hu5Vxyu9Vuc23BYSfO1adXfqsV5hTfSq0yC7LNznoxYnCnTBXn77ijixU1i5uRbYWmbINMxoBYMsElA==
+  /flora-sql-parser/0.7.7:
+    dependencies:
+      flora-errors: 0.7.1
+      has: 1.0.3
+      pegjs: 0.10.0
+    dev: false
+    engines:
+      node: '>=6'
+    requiresBuild: true
+    resolution:
+      integrity: sha512-AfIper1YfQqJH+TKFz7UNKxid2cnYQIJVwa0Bu9oZfgfj5YPZ+RVcI/MqCqwu3EFiiTpfBFhy1CUjfJII+JcZg==
   /forwarded/0.1.2:
     dev: false
     engines:
@@ -327,6 +347,18 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-PYyt2Q2XZWn6g1qx+OSyOhBWBac=
+  /function-bind/1.1.1:
+    dev: false
+    resolution:
+      integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
+  /has/1.0.3:
+    dependencies:
+      function-bind: 1.1.1
+    dev: false
+    engines:
+      node: '>= 0.4.0'
+    resolution:
+      integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
   /http-errors/1.6.2:
     dependencies:
       depd: 1.1.1
@@ -471,6 +503,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
+  /pegjs/0.10.0:
+    dev: false
+    engines:
+      node: '>=0.10'
+    resolution:
+      integrity: sha1-z4uvrm7d/0tafvsYUmnqr0YQ3b0=
   /pg-connection-string/0.1.3:
     dev: false
     resolution:
@@ -481,6 +519,12 @@ packages:
       pg: '>5.0'
     resolution:
       integrity: sha1-wCIDLIlJ8xKk+R+2QJzgQHa+Mlc=
+  /pg-slang/0.1.2:
+    dependencies:
+      flora-sql-parser: 0.7.7
+    dev: false
+    resolution:
+      integrity: sha512-2ptwG8QFgKDjAUdKB6e0NVFMHhFK8/+Toy0UTj3nN+sycCrJAF1WDPdP3t9qAxims3YGncNaR2SCe8v00Tiuow==
   /pg-types/1.12.1:
     dependencies:
       postgres-array: 1.0.2
@@ -704,4 +748,5 @@ specifiers:
   ifct2017: ^0.2.3
   number-extra: ^0.2.3
   pg: ^7.4.3
+  pg-slang: ^0.1.2
   sql-extra: ^0.1.8

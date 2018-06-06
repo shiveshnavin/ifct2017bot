@@ -4,6 +4,12 @@ const Sql = require('sql-extra');
 const ifct2017 = require('ifct2017');
 
 const COLUMNS = ifct2017.columns.corpus;
+const COLUMN_NAM = new Map([
+  ['abbr', 'Abbreviation'],
+  ['desc', 'Description'],
+  ['kj', 'kJ'],
+  ['kcal', 'kcal'],
+]);
 const EXCLUDE_DEF = /lang|tags|tsvector/;
 const ORDER_DEF = ['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', 'tsvector'];
 const TYPE_DEF = new Map([
@@ -14,11 +20,20 @@ const TYPE_DEF = new Map([
   ['grup', 'TEXT'],
   ['regn', 'INT'],
   ['tsvector', 'TSVECTOR'],
+  ['hydrolysis', 'INT'],
+  ['states', 'INT'],
+  ['districts', 'INT'],
+  ['selected', 'INT'],
+  ['sampled', 'INT'],
+  ['samples', 'INT'],
+  ['entries', 'INT'],
+  ['kj', 'INT'],
+  ['kcal', 'INT'],
 ]);
 const UNIT_DEF = new Map([
   ['enerc', 'kcal'],
 ]);
-const UNIT_MAP = new Map([
+const UNIT_SYM = new Map([
   [0, 'g'],
   [3, 'mg'],
   [6, 'ug'],
@@ -37,18 +52,31 @@ function getFactor(col) {
   var max = Math.max.apply(null, col);
   return Math.min(-Math.floor(Math.log10(max+1e-10)/3)*3, 9);
 };
+function applyFactor(col, fac) {
+  for(var i=0, I=col.length; i<I; i++)
+    col[i] = Number.round(col[i]*fac);
+};
 
 function getMeta(cols) {
   var meta = {};
   for(var k in cols) {
     if(k.endsWith('_e')) continue;
-    var name = COLUMNS.get(k);
-    var type = TYPE_DEF.get(k)||'REAL';
-    var factor = type==='REAL' && !UNIT_DEF.has(k)? getFactor(cols[k]):1;
-    var unit = type==='REAL'? UNIT_DEF.get(k)||UNIT_MAP.get(factor):null;
+    var name = COLUMNS.get(k)||COLUMN_NAM.get(k)||k[0].toUpperCase()+k.substring(1);
+    var type = typeof cols[k][0]==='string'? 'TEXT':TYPE_DEF.get(k)||'REAL';
+    var factor = type==='REAL' && k+'_e' in cols? getFactor(cols[k]):0;
+    var unit = type==='REAL' && k+'_e' in cols? UNIT_SYM.get(factor):UNIT_DEF.get(k)||null;
     meta[k] = {name, type, factor, unit};
   }
   return meta;
+};
+function applyMeta(cols, meta) {
+  for(var k in cols) {
+    if(k.endsWith('_e')) continue;
+    if(meta[k].factor===0) continue;
+    if(typeof cols[k][0]==='string') continue;
+    if(typeof cols[k][0]==='number') applyFactor(cols[k], meta.factor);
+    else { for(var vals of cols[k]) applyFactor(vals, meta.factor); }
+  }
 };
 
 function exclude(cols, re=EXCLUDE_DEF) {
@@ -70,11 +98,6 @@ function orderBy(cols, by, pre=ORDER_DEF) {
   return tcols;
 };
 
-function applyFactor(col, meta) {
-  var mul = 10**meta.factor;
-  for(var i=0, I=col.length; i<I; i++)
-    col[i] = Number.round(col[i]*mul);
-};
 
 function toValueMode(cols) {
   var tcols = {};
@@ -86,7 +109,6 @@ function toValueMode(cols) {
   }
   return tcols;
 };
-
 function toRangeMode(cols) {
   var tcols = {};
   for(var k in cols) {
@@ -101,7 +123,6 @@ function toRangeMode(cols) {
   }
   return tcols;
 };
-
 function toTextMode(cols, meta) {
   var tcols = {};
   for(var k in cols) {
@@ -118,7 +139,25 @@ function toTextMode(cols, meta) {
   return tcols;
 };
 
-
+function transform(rows, opt={}) {
+  if(opt.mode==='raw') return {data: rows};
+  var cols = exclude(toBase(rows));
+  var meta = getMeta(cols);
+  if(opt.mode==='value') {
+    var data = toValueMode(cols);
+    applyMeta(data, meta);
+    return {meta, data};
+  }
+  else if(opt.mode==='range') {
+    var data = toRangeMode(cols);
+    applyMeta(data, meta);
+    return {meta, data};
+  }
+  else {
+    var data = toTextMode(cols, meta);
+    return {meta, data};
+  }
+};
 
 async function setup(db) {
   var o = ifct2017;
@@ -145,9 +184,10 @@ async function setup(db) {
   console.log(`DATA: setup done`);
 };
 
-function data(db, txt) {
+function data(db, txt, opt={}) {
   var tab = txt.replace(/[\'\"]/g, '$1$1');
-  return db.query(`SELECT * FROM "${tab}";`).then(ans => ans.rows||[]);
+  return db.query(`SELECT * FROM "${tab}";`).then(ans => transform(ans.rows||[], opt));
 };
 data.setup = setup;
+data.transform = transform;
 module.exports = data;
