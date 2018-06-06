@@ -1,10 +1,12 @@
 /* global Map Set */
+require('array-extra');
 const Sql = require('sql-extra');
 const natural = require('natural');
 const ifct2017 = require('ifct2017');
 
 const IGNORE = /^(a|an|the|i|he|him|she|her|they|their|as|at|if|in|is|it|of|on|to|by|want|well|than|then|thus|however|ok|okay)$/;
 const COLUMN_ALL = new Set(['everyth', 'complet', 'wholli', 'whole', 'total', 'entir', 'fulli', 'full', 'all', '*']);
+const COLUMN_VAL = new Set(['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', '*']);
 const TABLE_COD = new Map([
   ['compositions_tsvector', 'compositions_tsvector'],
   ['composit', 'compositions_tsvector'],
@@ -88,11 +90,18 @@ function mapTable(txt) {
 };
 function mapColumn(db, txt, hnt) {
   txt = replaceColumn(txt);
-  var col = COLUMN_ALL.get(natural.PorterStemmer.stem(txt));
+  var col = COLUMN_ALL.has(natural.PorterStemmer.stem(txt))? '*':null;
   if(col!=null) return Promise.resolve(col);
   var sql = 'SELECT "code" FROM "columns_tsvector" WHERE "tsvector" @@ plainto_tsquery($1)';
   if(hnt==null) sql += ' ORDER BY ts_rank("tsvector", plainto_tsquery($1), 0) DESC LIMIT 1';
-  return db.query(sql, [txt]).then(ans => (ans.rows||[]).map(v => v.code));
+  return db.query(sql, [txt]).then(ans => {
+    var cols = [];
+    for(var r of ans.rows||[]) {
+      cols.push(r.code);
+      if((hnt==null || hnt==='all') && !COLUMN_VAL.has(r.code)) cols.push(r.code+'_e');
+    }
+    return cols;
+  });
 };
 function mapRow(db, txt, hnt) {
   var sql = 'SELECT "code" FROM "compositions_tsvector" WHERE "tsvector" @@ plainto_tsquery($1)';
@@ -121,7 +130,7 @@ function matchColumn(db, wrds) {
   }
   sql = sql.substring(0, sql.length-11);
   return db.query(sql, par).then((ans) => {
-    var col = COLUMN_ALL.get(natural.PorterStemmer.stem(wrds[0])), ncol = col? 1:0;
+    var col = COLUMN_ALL.has(natural.PorterStemmer.stem(wrds[0]))? '*':null, ncol = col? 1:0;
     if(ans.rowCount>0 && ans.rows[0].i>ncol) return {value: ans.rows[0].code, length: ans.rows[0].i};
     return col? {value: col, length: 1}:null;
   });
@@ -197,13 +206,23 @@ function exclude(cols, re=EXCLUDE_DEF) {
 };
 
 function orderBy(cols, by, pre=ORDER_DEF) {
-  var tcols = {}, ks = [];
+  var tcols = {}, cmp = {}, ks = [], tks = null;
   for(var k in cols)
-    if(!pre.includes(k)) ks.push(k);
-  ks = ks.sort();
+    if(!k.endsWith('_e') && !pre.includes(k)) ks.push(k);
+  if(by==='max') { for(var k of ks) cmp[k] = Math.max.apply(null, cols[k]); }
+  else if(by==='min') { for(var k of ks) cmp[k] = Math.min.apply(null, cols[k]); }
+  else if(by==='sum') { for(var k of ks) cmp[k] = Array.sum(cols[k]); }
+  else if(by==='range') { for(var k of ks) cmp[k] = Math.max.apply(null, cols[k])-Math.min.apply(null, cols[k]); }
+  else if(by==='relrange') { for(var k of ks) { var max = Math.max.apply(null, cols[k]), min = Math.min.apply(null, cols); cmp[k] = max-min/max||1; } }
+  else if(by==='error') { for(var k of ks) cmp[k] = Array.sum(cols[k+'_e']); }
+  else if(by==='name') tks = ks.sort();
+  else tks = ks;
+  tks = tks||ks.sort((a, b) => cmp[b]-cmp[a]);
   for(var k of pre)
+    if(k in cols) tcols[k] = cols[k];
+  for(var k of tks)
     tcols[k] = cols[k];
-  for(var k of ks)
+  for(var k in cols)
     tcols[k] = cols[k];
   return tcols;
 };
@@ -253,6 +272,7 @@ function transform(rows, opt={}) {
   if(opt.mode==='raw') return {data: rows};
   var cols = exclude(toBase(rows));
   var meta = getMeta(cols);
+  cols = opt.order? orderBy(cols, opt.order):cols;
   if(opt.mode==='value') {
     var data = toValueMode(cols);
     applyMeta(data, meta);
@@ -302,6 +322,12 @@ function data(db, txt, opt={}) {
 };
 data.setup = setup;
 data.transform = transform;
+data.mapTable = mapTable;
+data.mapColumn = mapColumn;
+data.mapRow = mapRow;
 data.mapEntity = mapEntity;
+data.matchTable = matchTable;
+data.matchColumn = matchColumn;
+data.matchRow = matchRow;
 data.matchEntity = matchEntity;
 module.exports = data;

@@ -1,4 +1,5 @@
 dependencies:
+  array-extra: 0.1.5
   body-parser: 1.18.3
   express: 4.16.3
   ifct2017: 0.2.3
@@ -192,6 +193,10 @@ packages:
       node: '>=0.2.6'
     resolution:
       integrity: sha512-KLy/ugo33KZA7nugtQ7O0E1c8kQ52N3IvD/XgIh4w/Nr28ypfkwDfA67F1ev4N1m5D+BOk1+b2dEJDfpj/VvZg==
+  /array-extra/0.1.5:
+    dev: false
+    resolution:
+      integrity: sha512-ti4K3LK+RQ9WfxEzp8zo0vhgWla4u0keIxSoB/Td24cSyljuLQSzVJZh3mbYRYcaRHI1iqvc2fDa3hax//+e+A==
   /array-flatten/1.1.1:
     dev: false
     resolution:
@@ -834,6 +839,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 7
 shrinkwrapVersion: 3
 specifiers:
+  array-extra: ^0.1.5
   body-parser: ^1.18.3
   express: ^4.16.3
   ifct2017: ^0.2.3

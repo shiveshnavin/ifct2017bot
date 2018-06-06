@@ -13,7 +13,7 @@ exports.slang = async function(db, txt, opt={}) {
   return Object.assign({sql}, ans);
 };
 exports.english = async function(db, txt, opt={}) {
-  var eopt = {table: 'compositions', columns: ['name']};
+  var eopt = {table: 'food', columns: ['"name"']};
   var slang = await english(txt, (wrds) => data.matchEntity(db, wrds), null, eopt);
   var ans = await exports.slang(db, slang, opt);
   return Object.assign({slang}, ans);
