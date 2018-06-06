@@ -40,6 +40,7 @@ const TABLE_COD = new Map([
   ['sampl unit', 'samplingunits_tsvector'],
   ['primari sampl unit', 'samplingunits_tsvector'],
 ]);
+const MATCH_TYP = ['table', 'column', 'row'];
 const EXCLUDE_DEF = /lang|tags|tsvector/;
 const ORDER_DEF = ['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', 'tsvector'];
 const TYPE_DEF = new Map([
@@ -93,9 +94,15 @@ function mapColumn(db, txt, hnt) {
   if(hnt==null) sql += ' ORDER BY ts_rank("tsvector", plainto_tsquery($1), 0) DESC LIMIT 1';
   return db.query(sql, [txt]).then(ans => (ans.rows||[]).map(v => v.code));
 };
+function mapRow(db, txt, hnt) {
+  var sql = 'SELECT "code" FROM "compositions_tsvector" WHERE "tsvector" @@ plainto_tsquery($1)';
+  if(hnt==null) sql += ' ORDER BY ts_rank("tsvector", plainto_tsquery($1), 0) DESC LIMIT 1';
+  return db.query(sql, [txt]).then(ans => (ans.rows||[]).map(v => v.code));
+};
 function mapEntity(db, txt, typ, hnt) {
   if(typ==='table') return mapTable(txt);
-  return mapColumn(db, txt, hnt);
+  if(typ==='column') return mapColumn(db, txt, hnt);
+  return mapRow(db, txt, hnt);
 };
 
 function matchTable(wrds) {
@@ -119,7 +126,25 @@ function matchColumn(db, wrds) {
     return col? {value: col, length: 1}:null;
   });
 };
+function matchRow(db, wrds) {
+  var sql = '', par = [];
+  for(var i=wrds.length, p=1; i>0; i--, p++) {
+    sql += `SELECT "code", '${i}'::INT AS i FROM "compositions_tsvector" WHERE "tsvector" @@ plainto_tsquery($${p}) UNION ALL `;
+    par.push(wrds.slice(0, i).join(' '));
+  }
+  sql = sql.substring(0, sql.length-11);
+  return db.query(sql, par).then(ans => ans.rowCount>0? {value: ans.rows[0].code, length: ans.rows[0].i}:null);
+};
 function matchEntity(db, wrds) {
+  var rdy = [matchTable(wrds), matchColumn(db, wrds), matchRow(db, wrds)];
+  return Promise.all(rdy).then((ans) => {
+    var l = ans.map(v => v? v.length:0);
+    var mi = l[1]>l[0]? 1:0;
+    mi = l[2]>l[mi]? 2:mi;
+    if(l[mi]===0) return null;
+    var value = wrds.slice(0, l[mi]).join(' ');
+    return l[mi]>0? {type: MATCH_TYP[mi], value, length: l[mi]}:null;
+  });
 };
 
 
@@ -278,4 +303,5 @@ function data(db, txt, opt={}) {
 data.setup = setup;
 data.transform = transform;
 data.mapEntity = mapEntity;
+data.matchEntity = matchEntity;
 module.exports = data;

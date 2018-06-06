@@ -11,6 +11,7 @@
     "body-parser": "^1.18.3",
     "pg": "^7.4.3",
     "pg-slang": "^0.1.5",
+    "pg-english": "^0.1.2",
     "natural": "^0.6.1",
     "sql-extra": "^0.1.8",
     "number-extra": "^0.2.3",

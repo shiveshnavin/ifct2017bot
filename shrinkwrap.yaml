@@ -5,6 +5,7 @@ dependencies:
   natural: 0.6.1
   number-extra: 0.2.6
   pg: 7.4.3
+  pg-english: 0.1.2
   pg-slang: 0.1.5
   sql-extra: 0.1.8
 packages:
@@ -141,6 +142,35 @@ packages:
     dev: false
     resolution:
       integrity: sha512-6dAE0Y87YggtgbHbeiy90jWQioHrbzvrTbqy5zXCljtZQaFMQWcI7IqmtoyQVG2A4fivuv8I7LP3ALvodngSlg==
+  /@pg-english/entity/0.1.5:
+    dependencies:
+      '@pg-english/token': 0.1.8
+    dev: false
+    resolution:
+      integrity: sha512-aUEyJ1ifKne40BEDmGPvC40GJnFEyMhkt9hi2D9YfZRXrXlFA5L7FGVXOiXkAgwV6mPtq6EF73oPUFVUEYG06Q==
+  /@pg-english/number/0.1.8:
+    dependencies:
+      '@pg-english/token': 0.1.8
+    dev: false
+    resolution:
+      integrity: sha512-+wPX1AoBvyCRfg6LcVgUoosyPFJgmMcPKtqdCAqyUmANSMKboHiKb4GSz2C9kvleSqFxXTDpMxfPvEskXL1R/Q==
+  /@pg-english/reserved/0.1.2:
+    dependencies:
+      '@pg-english/token': 0.1.8
+      natural: 0.6.1
+    dev: false
+    resolution:
+      integrity: sha512-RJo3oBO/1NrJ9KGbncmNiqTeIPTsgNGcEWy4DbboH06++dSFRrStqljNARNutIJqoP+xTywyj0+67yFfy1nP+Q==
+  /@pg-english/token/0.1.8:
+    dev: false
+    resolution:
+      integrity: sha512-+7z0IU1yRbYHjNq0fMJguRM1c9YUbEs/2PoqrQeAFXJQEkOzsac/sX/q/HR+5xMDyrTlmQUG8gp4DBL7az06JA==
+  /@pg-english/unit/0.1.1:
+    dependencies:
+      '@pg-english/token': 0.1.8
+    dev: false
+    resolution:
+      integrity: sha512-aRUbsc4a3RHJp4n3ux7H5ocyWQK6MYBVWrn+//2FwQDt6tR8/2SoLexDrITXyS7ZGXNmb9VVFj9AfVqsav7+Ow==
   /accepts/1.3.5:
     dependencies:
       mime-types: 2.1.18
@@ -548,6 +578,16 @@ packages:
     dev: false
     resolution:
       integrity: sha1-2hhHsglA5C7hSSvq9l1J2RskXfc=
+  /pg-english/0.1.2:
+    dependencies:
+      '@pg-english/entity': 0.1.5
+      '@pg-english/number': 0.1.8
+      '@pg-english/reserved': 0.1.2
+      '@pg-english/token': 0.1.8
+      '@pg-english/unit': 0.1.1
+    dev: false
+    resolution:
+      integrity: sha512-HVQe22aBC4h5TLKyLnNUH7sfwrJ0dOZ1DYZ6zHrO53NN5MORz0I52ioeNx7YICwW5kJX7CYoEANRIi7gQ4Jswg==
   /pg-pool/2.0.3:
     dev: false
     peerDependencies:
@@ -800,5 +840,6 @@ specifiers:
   natural: ^0.6.1
   number-extra: ^0.2.3
   pg: ^7.4.3
+  pg-english: ^0.1.2
   pg-slang: ^0.1.5
   sql-extra: ^0.1.8
