@@ -2,9 +2,10 @@ dependencies:
   body-parser: 1.18.3
   express: 4.16.3
   ifct2017: 0.2.3
+  natural: 0.6.1
   number-extra: 0.2.6
   pg: 7.4.3
-  pg-slang: 0.1.2
+  pg-slang: 0.1.5
   sql-extra: 0.1.8
 packages:
   /@ifct2017/abbreviations/0.3.2:
@@ -149,6 +150,18 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-63d99gEXI6OxTopywIBcjoZ0a9I=
+  /afinn-165/1.0.2:
+    dev: false
+    resolution:
+      integrity: sha512-oVbXkteWA6XgYndv3dXYVvulStflVYQtR2K+zp2PyaVhPkkOhZ8tAvk9V7cwaI43GwZaNqRoC2VTpoaWmFyBTA==
+  /apparatus/0.0.10:
+    dependencies:
+      sylvester: 0.0.21
+    dev: false
+    engines:
+      node: '>=0.2.6'
+    resolution:
+      integrity: sha512-KLy/ugo33KZA7nugtQ7O0E1c8kQ52N3IvD/XgIh4w/Nr28ypfkwDfA67F1ev4N1m5D+BOk1+b2dEJDfpj/VvZg==
   /array-flatten/1.1.1:
     dev: false
     resolution:
@@ -429,6 +442,16 @@ packages:
       node: '>= 0.10'
     resolution:
       integrity: sha1-4/o1e3c9phnybpXwSdBVxyeW+Gs=
+  /json-stable-stringify/1.0.1:
+    dependencies:
+      jsonify: 0.0.0
+    dev: false
+    resolution:
+      integrity: sha1-mnWdOcXy/1A/1TAGRu1EX4jE+a8=
+  /jsonify/0.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-LHS27kHZPKUbe1qu6PUDYx0lKnM=
   /lunr/2.2.1:
     dev: false
     resolution:
@@ -471,6 +494,18 @@ packages:
     dev: false
     resolution:
       integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=
+  /natural/0.6.1:
+    dependencies:
+      afinn-165: 1.0.2
+      apparatus: 0.0.10
+      json-stable-stringify: 1.0.1
+      sylvester: 0.0.12
+      underscore: 1.9.1
+    dev: false
+    engines:
+      node: '>=0.4.10'
+    resolution:
+      integrity: sha1-Iwe/BPFyAShq6hRjCgj31/vC0GA=
   /negotiator/0.6.1:
     dev: false
     engines:
@@ -519,12 +554,12 @@ packages:
       pg: '>5.0'
     resolution:
       integrity: sha1-wCIDLIlJ8xKk+R+2QJzgQHa+Mlc=
-  /pg-slang/0.1.2:
+  /pg-slang/0.1.5:
     dependencies:
       flora-sql-parser: 0.7.7
     dev: false
     resolution:
-      integrity: sha512-2ptwG8QFgKDjAUdKB6e0NVFMHhFK8/+Toy0UTj3nN+sycCrJAF1WDPdP3t9qAxims3YGncNaR2SCe8v00Tiuow==
+      integrity: sha512-TpwzPOVNfhf7jTZ8J70oo8Oy3OBcyx6SvX9XNEjWv78LSv+9vp8XNGtZZrRS+0FEKvv35ak9nXi9ICCQhxjS7Q==
   /pg-types/1.12.1:
     dependencies:
       postgres-array: 1.0.2
@@ -702,6 +737,18 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=
+  /sylvester/0.0.12:
+    dev: false
+    engines:
+      node: '>=0.2.6'
+    resolution:
+      integrity: sha1-WohEFc0tACxX56OqyZRip1zp/bQ=
+  /sylvester/0.0.21:
+    dev: false
+    engines:
+      node: '>=0.2.6'
+    resolution:
+      integrity: sha1-KYexzivS84sNzio0OIiEv6RADqc=
   /through/2.3.8:
     dev: false
     resolution:
@@ -715,6 +762,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-HRkVv/5qY2G6I8iab9cI7v1bOIdhm94dVjQCPFElW9W+3GeDOSHmy2EBYe4VTApuzolPcmgFTN3ftVJRKR2J9Q==
+  /underscore/1.9.1:
+    dev: false
+    resolution:
+      integrity: sha512-5/4etnCkd9c8gwgowi5/om/mYO5ajCaOgdzj/oW+0eQV9WxKBDZw5+ycmKmeaTXjInS/W0BzpGLo2xR2aBwZdg==
   /unpipe/1.0.0:
     dev: false
     engines:
@@ -746,7 +797,8 @@ specifiers:
   body-parser: ^1.18.3
   express: ^4.16.3
   ifct2017: ^0.2.3
+  natural: ^0.6.1
   number-extra: ^0.2.3
   pg: ^7.4.3
-  pg-slang: ^0.1.2
+  pg-slang: ^0.1.5
   sql-extra: ^0.1.8
