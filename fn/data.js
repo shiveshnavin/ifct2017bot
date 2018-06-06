@@ -1,5 +1,4 @@
 /* global Map Set */
-require('number-extra');
 const Sql = require('sql-extra');
 const natural = require('natural');
 const ifct2017 = require('ifct2017');
@@ -131,13 +130,16 @@ function toBase(rows) {
   return cols;
 };
 
+function round(num) {
+  return Math.round(num*1e+12)/1e+12;
+};
 function getFactor(col) {
   var max = Math.max.apply(null, col);
   return Math.min(-Math.floor(Math.log10(max+1e-10)/3)*3, 9);
 };
 function applyFactor(col, fac) {
-  for(var i=0, I=col.length; i<I; i++)
-    col[i] = Number.round(col[i]*fac);
+  for(var i=0, I=col.length, mul=10**fac; i<I; i++)
+    col[i] = round(col[i]*mul);
 };
 
 function getMeta(cols) {
@@ -154,11 +156,11 @@ function getMeta(cols) {
 };
 function applyMeta(cols, meta) {
   for(var k in cols) {
-    if(k.endsWith('_e')) continue;
-    if(meta[k].factor===0) continue;
+    var tk = k.replace(/_e$/, '');
+    if(meta[tk].factor===0) continue;
     if(typeof cols[k][0]==='string') continue;
-    if(typeof cols[k][0]==='number') applyFactor(cols[k], meta.factor);
-    else { for(var vals of cols[k]) applyFactor(vals, meta.factor); }
+    if(typeof cols[k][0]==='number') applyFactor(cols[k], meta[tk].factor);
+    else { for(var vals of cols[k]) applyFactor(vals, meta[tk].factor); }
   }
 };
 
@@ -237,6 +239,7 @@ function transform(rows, opt={}) {
     return {meta, data};
   }
   else {
+    applyMeta(cols, meta);
     var data = toTextMode(cols, meta);
     return {meta, data};
   }
