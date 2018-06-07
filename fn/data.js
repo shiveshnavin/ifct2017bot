@@ -88,37 +88,36 @@ function mapTable(txt) {
   txt = txt.split(' ').filter((v) => !IGNORE.test(v)).map(natural.PorterStemmer.stem).sort().join(' ');
   return [TABLE_COD.get(txt)];
 };
-function mapColumn(db, txt, hnt) {
-  txt = replaceColumn(txt);
-  var col = COLUMN_ALL.has(natural.PorterStemmer.stem(txt))? '*':null;
-  if(col!=null) return Promise.resolve(col);
+function mapColumn(db, txt, hnt, frm) {
+  var txt = replaceColumn(txt), cols = [];
+  if(COLUMN_ALL.has(natural.PorterStemmer.stem(txt))) return Promise.resolve(['*']);
+  if(!frm.includes('compositions_tsvector')) return [txt.toLowerCase()];
   var sql = 'SELECT "code" FROM "columns_tsvector" WHERE "tsvector" @@ plainto_tsquery($1)';
   if(hnt==null) sql += ' ORDER BY ts_rank("tsvector", plainto_tsquery($1), 0) DESC LIMIT 1';
   return db.query(sql, [txt]).then(ans => {
-    var cols = [];
     for(var r of ans.rows||[]) {
       cols.push(r.code);
-      if((hnt==null || hnt==='all') && !COLUMN_VAL.has(r.code)) cols.push(r.code+'_e');
+      if((hnt||'all')==='all' && !COLUMN_VAL.has(r.code)) cols.push(r.code+'_e');
     }
     return cols;
   });
 };
-function mapRow(db, txt, hnt) {
+function mapRow(db, txt, hnt, frm) {
   var sql = 'SELECT "code" FROM "compositions_tsvector" WHERE "tsvector" @@ plainto_tsquery($1)';
   if(hnt==null) sql += ' ORDER BY ts_rank("tsvector", plainto_tsquery($1), 0) DESC LIMIT 1';
   return db.query(sql, [txt]).then(ans => (ans.rows||[]).map(v => v.code));
 };
-function mapEntity(db, txt, typ, hnt) {
+function mapEntity(db, txt, typ, hnt, frm) {
   if(typ==='table') return mapTable(txt);
-  if(typ==='column') return mapColumn(db, txt, hnt);
-  return mapRow(db, txt, hnt);
+  if(typ==='column') return mapColumn(db, txt, hnt, frm);
+  return mapRow(db, txt, hnt, frm);
 };
 
 function matchTable(wrds) {
   wrds = wrds.map(natural.PorterStemmer.stem);
   for(var i=wrds.length; i>0; i--) {
     var txt = wrds.filter((v) => !IGNORE.test(v)).sort().join(' ');
-    if(TABLE_COD.has(txt)) return {value: TABLE_COD.get(txt), length: i};
+    if(TABLE_COD.has(txt)) return {value: TABLE_COD.get(txt).replace(/_tsvector$/, ''), length: i};
   }
   return null;
 };
@@ -151,8 +150,7 @@ function matchEntity(db, wrds) {
     var mi = l[1]>l[0]? 1:0;
     mi = l[2]>l[mi]? 2:mi;
     if(l[mi]===0) return null;
-    var value = wrds.slice(0, l[mi]).join(' ');
-    return l[mi]>0? {type: MATCH_TYP[mi], value, length: l[mi]}:null;
+    return {type: MATCH_TYP[mi], value: ans[mi].value, length: l[mi]};
   });
 };
 
