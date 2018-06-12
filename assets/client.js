@@ -10,6 +10,7 @@ var asql = $('#asql');
 var abody = $('#abody');
 var atable = $('#atable');
 var datatable = null;
+var highcharts = null;
 // var client = new ApiAi.ApiAiClient({accessToken: ACCESS_TOKEN});
 
 
@@ -52,32 +53,52 @@ function tableRows(rows, meta) {
   }
   return rows;
 };
-function drawTable(data) {
-  if(datatable!=null) { datatable.destroy(); atable.empty(); }
-  if(data.rows.length===0) return;
+function drawTable(rows, meta) {
+  if(rows.length===0) return;
+  var keys = Object.keys(rows[0]);
+  var cols = tableColumns(rows, meta);
+  var data = tableRows(rows, meta);
   datatable = atable.DataTable({
-    columns: tableColumns(data.rows, data.meta),
-    data: tableRows(data.rows, data.meta),
-    aaSorting: [], scrollX: true, retrieve: true,
-    fixedHeader: {header: true, footer: true}
+    columns: cols, data: data, aaSorting: [], scrollX: true, autoWidth: true,
+    retrieve: true, fixedHeader: {header: true, footer: true}
   });
+  $('#atable_wrapper thead').on('click', 'th', function () {
+    var i = datatable.column(this).index();
+    if(i>0) drawChart(rows, meta, keys[0], cols[i].data.sort);
+  });
+  setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 0);
 };
 
-function drawChart(data) {
-  var keys = Object.keys(data.rows[0]);
-  var axis = [], x = keys[0], y = keys[1];
-  for(var i=0, I=data.rows.length; i<I; i++)
-    axis[i] = [data.rows[i][x], data.rows[i][y]];
-  console.log('axis', axis);
-  Highcharts.chart('achart', {
-    title: {text: data.meta[y].name},
-    xAxis: {labels: {enabled: true, formatter: function() { return axis[this.value][0]; }}},
-    yAxis: {title: {text: null}},
-    tooltip: {crosshairs: true, shared: true, valueSuffix: data.meta[y].unit},
+function chartValue(rows, x, y) {
+  var data = [];
+  for(var row of rows)
+    data.push([row[x], row[y]]);
+  return data;
+};
+function chartRange(rows, x, y) {
+  var data = [], ye = y+'_e';
+  if(rows[0][ye]==null) return null;
+  for(var row of rows)
+    data.push([row[x], round(row[y]-row[ye]), round(row[y]+row[ye])]);
+  return data;
+};
+function drawChart(rows, meta, x, y) {
+  var metay = meta[y];
+  var label = '{value}'+(metay.unit||'');
+  var value = chartValue(rows, x, y);
+  var range = chartRange(rows, x, y);
+  highcharts = Highcharts.chart('achart', {
+    title: {text: metay.name},
+    xAxis: {labels: {enabled: true, formatter: function() { return value[Math.round(this.value)][0]; }}},
+    yAxis: {title: {text: null}, labels: {format: label}},
+    tooltip: {crosshairs: true, shared: true, valueSuffix: metay.unit},
     legend: {},
     series: [{
-      name: data.meta[y].name, data: axis, zIndex: 1,
+      name: metay.name, data: value, zIndex: 1,
       marker: {fillColor: 'white', lineWidth: 2, lineColor: Highcharts.getOptions().colors[0]}
+    }, {
+      name: 'Range', data: range, type: 'arearange', lineWidth: 0, linkedTo: ':previous',
+      color: Highcharts.getOptions().colors[0], fillOpacity: 0.3, zIndex: 0, marker: {enabled: false}
     }]
   });
 };
@@ -86,10 +107,14 @@ form.submit(function() {
   var txt = query.val();
   console.log(txt);
   $.getJSON('/fn/english/'+txt, function(data) {
-    applyMeta(data.rows, data.meta);
-    console.log(data);
-    drawTable(data);
-    drawChart(data);
+    var rows = data.rows, meta = data.meta;
+    if(datatable!=null) { datatable.destroy(); $('#atable').empty(); datatable = null; }
+    if(highcharts!=null) { highcharts.destroy(); $('#achart').empty(); highcharts = null; }
+    if(rows.length===0) return;
+    var keys = Object.keys(rows[0]||{});
+    applyMeta(rows, meta);
+    drawTable(rows, meta);
+    if(keys.length>=2) drawChart(rows, meta, keys[0], keys[1]);
     ahead.text(txt);
     aslang.text(data.slang);
     asql.text(data.sql);
