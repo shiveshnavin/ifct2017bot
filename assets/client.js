@@ -1,3 +1,4 @@
+/* global Highcharts */
 var ACCESS_TOKEN = 'a81e31683f1b41e39df0a3a23dbe9e58';
 
 var form = $('form');
@@ -57,7 +58,27 @@ function drawTable(data) {
   datatable = atable.DataTable({
     columns: tableColumns(data.rows, data.meta),
     data: tableRows(data.rows, data.meta),
-    aaSorting: [], retrieve: true
+    aaSorting: [], scrollX: true, retrieve: true,
+    fixedHeader: {header: true, footer: true}
+  });
+};
+
+function drawChart(data) {
+  var keys = Object.keys(data.rows[0]);
+  var axis = [], x = keys[0], y = keys[1];
+  for(var i=0, I=data.rows.length; i<I; i++)
+    axis[i] = [data.rows[i][x], data.rows[i][y]];
+  console.log('axis', axis);
+  Highcharts.chart('achart', {
+    title: {text: data.meta[y].name},
+    xAxis: {labels: {enabled: true, formatter: function() { return axis[this.value][0]; }}},
+    yAxis: {title: {text: null}},
+    tooltip: {crosshairs: true, shared: true, valueSuffix: data.meta[y].unit},
+    legend: {},
+    series: [{
+      name: data.meta[y].name, data: axis, zIndex: 1,
+      marker: {fillColor: 'white', lineWidth: 2, lineColor: Highcharts.getOptions().colors[0]}
+    }]
   });
 };
 
@@ -68,6 +89,7 @@ form.submit(function() {
     applyMeta(data.rows, data.meta);
     console.log(data);
     drawTable(data);
+    drawChart(data);
     ahead.text(txt);
     aslang.text(data.slang);
     asql.text(data.sql);

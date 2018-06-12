@@ -7,7 +7,7 @@ dependencies:
   number-extra: 0.2.7
   pg: 7.4.3
   pg-english: 0.1.17
-  pg-slang: 0.2.4
+  pg-slang: 0.2.5
   sql-extra: 0.1.8
 packages:
   /@ifct2017/abbreviations/0.3.2:
@@ -599,12 +599,12 @@ packages:
       pg: '>5.0'
     resolution:
       integrity: sha1-wCIDLIlJ8xKk+R+2QJzgQHa+Mlc=
-  /pg-slang/0.2.4:
+  /pg-slang/0.2.5:
     dependencies:
       flora-sql-parser: 0.7.7
     dev: false
     resolution:
-      integrity: sha512-af8OwU3PQt+sZUx/UzS/APKVMHYfNDAFv17uOFae5g3piYVhIfx0mZrq6ACukA8KByELWMe5P1yFqH4ELNZRSg==
+      integrity: sha512-XjBhOSyYzcO86Sl2lL7V/Drg4+w8DPrGm2tDpKtocA4yPaRCzLHlCvmfEh9fQp45D23pUTyrIWPr7R3sEMkquA==
   /pg-types/1.12.1:
     dependencies:
       postgres-array: 1.0.2
@@ -847,5 +847,5 @@ specifiers:
   number-extra: ^0.2.7
   pg: ^7.4.3
   pg-english: ^0.1.17
-  pg-slang: ^0.2.4
+  pg-slang: ^0.2.5
   sql-extra: ^0.1.8

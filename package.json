@@ -10,7 +10,7 @@
     "express": "^4.16.3",
     "body-parser": "^1.18.3",
     "pg": "^7.4.3",
-    "pg-slang": "^0.2.4",
+    "pg-slang": "^0.2.5",
     "pg-english": "^0.1.17",
     "natural": "^0.6.1",
     "sql-extra": "^0.1.8",
