@@ -1,6 +1,8 @@
 body {
   background: fixed left center url("https://i.imgur.com/WxxROR4.jpg");
-  font-family: 'Gugi', cursive;
+}
+body, select, input {
+  font-family: 'Gloria Hallelujah', cursive;
 }
 pre {
   display: inline;
@@ -18,7 +20,9 @@ section[main], #query:focus, #query {
   color: white;
 }
 card {
-  background: rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.8);
+  text-shadow: none;
+  color: black;
 }
 h3 {
   text-align: center;
@@ -35,8 +39,8 @@ h3 {
   color: silver;
 }
 #query {
-  font-family: Gugi;
-  font-size: 2.4rem;
+  font-family: 'Poor Story', cursive;
+  font-size: 3.4rem;
   text-align: center;
   border-bottom: 2px solid silver;
 }

@@ -4,11 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="A cool thing made with Glitch">
-  <script src="https://cdn.jsdelivr.net/gh/dialogflow/dialogflow-javascript-client@2.0.0-beta.21/target/ApiAi.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/barecss/css/bare.min.css">
-  <link id="favicon" rel="icon" href="https://i.imgur.com/alpA4ra.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Poor+Story">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/barecss/css/bare.min.css">
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <link rel="icon" href="https://i.imgur.com/alpA4ra.png">
   <link rel="stylesheet" href="/style.css">
   <title>Indian Food Composition</title>
 </head>
@@ -49,7 +52,12 @@
   <input id="query" type="text" placeholder="ex: Show food with highest calcium">
 </form>
 <card style="display: none;">
-  <h5 id="ans-head"></h5><hr><p id="ans-body"></p>
+  <table id="atable" class="hover cell-border row-border stripe" style="width: 100%;"></table><hr>
+  <div id="achart" style="width: 100%;"></div><hr>
+  <h5 id="ahead"></h5><hr>
+  <b id="aslang"></b><hr>
+  <b id="asql"></b><hr>
+  <p id="abody"></p>
 </card>
 </section>
 

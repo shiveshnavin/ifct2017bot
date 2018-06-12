@@ -85,10 +85,11 @@ function replaceColumn(txt) {
   return txt.replace(/(^|.*\W)vitamin[^\w]+a(\W.*|$)/gi, '$1vitamin-a$2');
 };
 function mapTable(txt) {
-  txt = txt.split(' ').filter((v) => !IGNORE.test(v)).map(natural.PorterStemmer.stem).sort().join(' ');
-  return [TABLE_COD.get(txt)];
+  var stm = txt.split(' ').filter((v) => !IGNORE.test(v)).map(natural.PorterStemmer.stem).sort().join(' ');
+  if(TABLE_COD.has(stm)) return [TABLE_COD.get(stm)];
+  return [`"tsvector" @@ plainto_tsquery('${txt}')`, 'compositions_tsvector'];
 };
-function mapColumn(db, txt, hnt, frm) {
+function mapColumn(db, txt, typ, hnt, frm) {
   var txt = replaceColumn(txt), cols = [];
   if(COLUMN_ALL.has(natural.PorterStemmer.stem(txt))) return Promise.resolve(['*']);
   if(!frm.includes('compositions_tsvector')) return [txt.toLowerCase()];
@@ -97,27 +98,28 @@ function mapColumn(db, txt, hnt, frm) {
   return db.query(sql, [txt]).then(ans => {
     for(var r of ans.rows||[]) {
       cols.push(r.code);
-      if((hnt||'all')==='all' && !COLUMN_VAL.has(r.code)) cols.push(r.code+'_e');
+      if(typ!=='columns') continue;
+      if(hnt!=null && hnt!=='all') continue;
+      if(!COLUMN_VAL.has(r.code)) cols.push(r.code+'_e');
     }
     return cols;
   });
 };
-function mapRow(db, txt, hnt, frm) {
+function mapRow(db, txt, typ, hnt, frm) {
   var sql = 'SELECT "code" FROM "compositions_tsvector" WHERE "tsvector" @@ plainto_tsquery($1)';
   if(hnt==null) sql += ' ORDER BY ts_rank("tsvector", plainto_tsquery($1), 0) DESC LIMIT 1';
   return db.query(sql, [txt]).then(ans => (ans.rows||[]).map(v => v.code));
 };
 function mapEntity(db, txt, typ, hnt, frm) {
-  if(typ==='table') return mapTable(txt);
-  if(typ==='column') return mapColumn(db, txt, hnt, frm);
-  return mapRow(db, txt, hnt, frm);
+  if(typ==='from') return mapTable(txt);
+  else return mapColumn(db, txt, typ, hnt, frm);
 };
 
 function matchTable(wrds) {
   wrds = wrds.map(natural.PorterStemmer.stem);
   for(var i=wrds.length; i>0; i--) {
     var txt = wrds.filter((v) => !IGNORE.test(v)).sort().join(' ');
-    if(TABLE_COD.has(txt)) return {value: TABLE_COD.get(txt).replace(/_tsvector$/, ''), length: i};
+    if(TABLE_COD.has(txt)) return {value: TABLE_COD.get(txt), hint: TABLE_COD.get(txt), length: i};
   }
   return null;
 };
@@ -130,7 +132,7 @@ function matchColumn(db, wrds) {
   sql = sql.substring(0, sql.length-11);
   return db.query(sql, par).then((ans) => {
     var col = COLUMN_ALL.has(natural.PorterStemmer.stem(wrds[0]))? '*':null, ncol = col? 1:0;
-    if(ans.rowCount>0 && ans.rows[0].i>ncol) return {value: ans.rows[0].code, length: ans.rows[0].i};
+    if(ans.rowCount>0 && ans.rows[0].i>ncol) return {value: ans.rows[0].code, hint: 'compositions_tsvector', length: ans.rows[0].i};
     return col? {value: col, length: 1}:null;
   });
 };
@@ -141,68 +143,53 @@ function matchRow(db, wrds) {
     par.push(wrds.slice(0, i).join(' '));
   }
   sql = sql.substring(0, sql.length-11);
-  return db.query(sql, par).then(ans => ans.rowCount>0? {value: ans.rows[0].code, length: ans.rows[0].i}:null);
+  return db.query(sql, par).then(ans => ans.rowCount>0? {value: ans.rows[0].code, hint: 'compositions_tsvector', length: ans.rows[0].i}:null);
 };
 function matchEntity(db, wrds) {
   var rdy = [matchTable(wrds), matchColumn(db, wrds), matchRow(db, wrds)];
-  return Promise.all(rdy).then((ans) => {
+  return Promise.all(rdy).then(ans => {
     var l = ans.map(v => v? v.length:0);
     var mi = l[1]>l[0]? 1:0;
     mi = l[2]>l[mi]? 2:mi;
     if(l[mi]===0) return null;
-    return {type: MATCH_TYP[mi], value: ans[mi].value, length: l[mi]};
+    var value = wrds.slice(0, l[mi]).join(' '), hint = ans[mi].hint;
+    return {type: MATCH_TYP[mi], value, hint, length: l[mi]};
   });
-};
-
-
-function toBase(rows) {
-  var cols = {};
-  for(var k in rows[0])
-    cols[k] = rows.map(row => row[k]);
-  return cols;
 };
 
 function round(num) {
   return Math.round(num*1e+12)/1e+12;
 };
-function getFactor(col) {
-  var max = Math.max.apply(null, col);
+function getName(k) {
+  return COLUMNS.has(k)? COLUMNS.get(k).name:COLUMN_NAM.get(k)||k[0].toUpperCase()+k.substring(1);
+};
+function getFactor(rows, k) {
+  var max = -Infinity;
+  for(var row of rows)
+    max = Math.max(max, row[k]);
   return Math.min(-Math.floor(Math.log10(max+1e-10)/3)*3, 9);
 };
-function applyFactor(col, fac) {
-  for(var i=0, I=col.length, mul=10**fac; i<I; i++)
-    col[i] = round(col[i]*mul);
-};
-
-function getMeta(cols) {
-  var meta = {};
-  for(var k in cols) {
+function getMeta(rows) {
+  var row = rows[0], meta = {};
+  if(row==null) return meta;
+  for(var k in row) {
     if(k.endsWith('_e')) continue;
-    var name = COLUMNS.has(k)? COLUMNS.get(k).name:COLUMN_NAM.get(k)||k[0].toUpperCase()+k.substring(1);
-    var type = typeof cols[k][0]==='string'? 'TEXT':TYPE_DEF.get(k)||'REAL';
-    var factor = type==='REAL' && k+'_e' in cols? getFactor(cols[k]):0;
-    var unit = type==='REAL' && k+'_e' in cols? UNIT_SYM.get(factor):UNIT_DEF.get(k)||null;
+    var name = k.includes('"')? k.replace(/\"(.*?)\"/g, (m, p1) => getName(p1)):getName(k);
+    var type = typeof row[k]==='string'? 'TEXT':TYPE_DEF.get(k)||'REAL';
+    var ismass = type==='REAL' && (k+'_e' in row || k.includes('"'));
+    var factor = ismass? getFactor(rows, k):0;
+    var unit = ismass? UNIT_SYM.get(factor):UNIT_DEF.get(k)||null;
     meta[k] = {name, type, factor, unit};
   }
   return meta;
 };
-function applyMeta(cols, meta) {
-  for(var k in cols) {
-    var tk = k.replace(/_e$/, '');
-    if(meta[tk].factor===0) continue;
-    if(typeof cols[k][0]==='string') continue;
-    if(typeof cols[k][0]==='number') applyFactor(cols[k], meta[tk].factor);
-    else { for(var vals of cols[k]) applyFactor(vals, meta[tk].factor); }
+
+function exclude(rows, re=EXCLUDE_DEF) {
+  for(var row of rows) {
+    for(var k in row)
+      if(re.test(k)) row[k] = 0;
   }
 };
-
-function exclude(cols, re=EXCLUDE_DEF) {
-  var tcols = {};
-  for(var k in cols)
-    if(!re.test(k)) tcols[k] = cols[k];
-  return tcols;
-};
-
 function orderBy(cols, by, pre=ORDER_DEF) {
   var tcols = {}, cmp = {}, ks = [], tks = null;
   for(var k in cols)
@@ -241,7 +228,7 @@ function toRangeMode(cols) {
   for(var k in cols) {
     if(k.endsWith('_e')) continue;
     if(!(k+'_e' in cols)) { tcols[k] = [cols[k]]; continue; }
-    var val = cols[k], err = cols[k+'_e'], bgn = val, end = err;
+    var val = cols[k], err = cols[k+'_e'], bgn = [], end = [];
     for(var i=0, I=val.length; i<I; i++) {
       var v = val[i], e = err[i];
       bgn[i] = v-e; end[i] = v+e;
@@ -266,26 +253,11 @@ function toTextMode(cols, meta) {
   return tcols;
 };
 
-function transform(rows, opt={}) {
-  if(opt.mode==='raw') return {data: rows};
-  var cols = exclude(toBase(rows));
-  var meta = getMeta(cols);
-  cols = opt.order? orderBy(cols, opt.order):cols;
-  if(opt.mode==='value') {
-    var data = toValueMode(cols);
-    applyMeta(data, meta);
-    return {meta, data};
-  }
-  else if(opt.mode==='range') {
-    var data = toRangeMode(cols);
-    applyMeta(data, meta);
-    return {meta, data};
-  }
-  else {
-    applyMeta(cols, meta);
-    var data = toTextMode(cols, meta);
-    return {meta, data};
-  }
+function describe(rows) {
+  var rows = rows||[];
+  exclude(rows);
+  var meta = getMeta(rows);
+  return {meta, rows};
 };
 
 async function setup(db) {
@@ -314,12 +286,12 @@ async function setup(db) {
   console.log(`DATA: setup done`);
 };
 
-function data(db, txt, opt={}) {
+function data(db, txt) {
   var tab = txt.replace(/[\'\"]/g, '$1$1');
-  return db.query(`SELECT * FROM "${tab}";`).then(ans => transform(ans.rows||[], opt));
+  return db.query(`SELECT * FROM "${tab}";`).then(ans => describe(ans.rows));
 };
 data.setup = setup;
-data.transform = transform;
+data.describe = describe;
 data.mapTable = mapTable;
 data.mapColumn = mapColumn;
 data.mapRow = mapRow;
