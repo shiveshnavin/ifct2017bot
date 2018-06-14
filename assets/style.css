@@ -47,3 +47,9 @@ h3 {
 button:not([class]) {
   border: none;
 }
+
+
+.diet-essential {
+  background: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/keto-diet-1525796867.jpg') no-repeat center;
+  height: 20rem;
+}
