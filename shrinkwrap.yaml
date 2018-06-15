@@ -2,7 +2,7 @@ dependencies:
   array-extra: 0.1.5
   body-parser: 1.18.3
   express: 4.16.3
-  ifct2017: 0.2.3
+  ifct2017: 0.2.4
   natural: 0.6.1
   number-extra: 0.2.7
   pg: 7.4.3
@@ -27,14 +27,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Sv+5bOPfUnwzK0KC9jnoORmgfl34LKgO0BtiEugfUg1fj/NjKCPj+4gYi2nKB+GViX+KhINTFd58pNLy/zmdGw==
-  /@ifct2017/codes/0.2.9:
+  /@ifct2017/codes/0.3.1:
     dependencies:
-      csv-parse: 2.4.0
+      csv-parse: 2.5.0
       lunr: 2.2.1
       sql-extra: 0.1.8
     dev: false
     resolution:
-      integrity: sha512-bAGy+H7r56CbqvnyMEJlQ7Air2IiX9MJn1lpgVOxhe2E5z8llnxAD8fmG/tTYBYp5MPqmOX2UIjScZrMOIOHtg==
+      integrity: sha512-axohaPOfH5zFCpX2WcYcq+ASnPuMoKaZ2/IdNIkGouSHSRPr4RMsn+FSjb45HAA8RhVC4G0iFFvJJSiuImrnQQ==
   /@ifct2017/columns/0.2.4:
     dependencies:
       lunr: 2.2.1
@@ -56,14 +56,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Jr2FwODsyyTzqChUt+k0CXBc7SHYtSyvnUu5PUqhtl55m/En+0/OETveDODzfLUBx5qtyRq0HMVtjvxbd10IUA==
-  /@ifct2017/compositions/0.2.18:
+  /@ifct2017/compositions/0.3.1:
     dependencies:
-      csv-parse: 2.4.0
+      csv-parse: 2.5.0
       lunr: 2.2.1
       sql-extra: 0.1.8
     dev: false
     resolution:
-      integrity: sha512-1Ltyk8W5iHtqXQ3PoFQ5pa4YajSp6jQwFmxfGYGDhDwPVKlCoHKbz3iD7fYwq3ap7kXgtwxt2sJDsYrzhP6tUw==
+      integrity: sha512-KfQxeOo7MFXGqrJovLfgmHuuUe2UHC4OPO39a9KRHu8SBxv1MK9KtcYH8/6pOvTXxB3Sqsps9jwCifqvVsCoKw==
   /@ifct2017/contents/0.3.2:
     dependencies:
       lunr: 2.2.1
@@ -71,14 +71,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-EF8rPk5shW4PJ+iTHdRXGqOM0srf3Gf6RYIp9KkUHfjgoBpmuRRjTnbD4w08mRRyjTQM4nfhtxqrszT2mZngCQ==
-  /@ifct2017/descriptions/0.2.9:
+  /@ifct2017/descriptions/0.3.1:
     dependencies:
-      csv-parse: 2.4.0
+      csv-parse: 2.5.0
       lunr: 2.2.1
       sql-extra: 0.1.8
     dev: false
     resolution:
-      integrity: sha512-esadnDGjR9Ltg0m4aijvvU4XUUJLwhOMtf5gQnnN5FpWbdiIgIiOIHreJW5m/6LAsQGiKsyQUw4NiRyBKSFRig==
+      integrity: sha512-4PAuFkcLfIvRt1nZKXGHzobu/U6ZXdSn0PASTj755Anqfdt8zEV8FmugiEIjxXh04QD5TC/I9BJNo11PD4iAnw==
   /@ifct2017/energies/0.3.2:
     dependencies:
       lunr: 2.2.1
@@ -106,12 +106,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-J0hfxKS3jrF+vIBpsEldrGqTW+Xz4AJf8n8h0jO0tlFmdVbRIed7OlJCPAx6AlaDPdoXIeuXcPXs+Bd9ymZYUA==
-  /@ifct2017/languages/0.3.2:
+  /@ifct2017/languages/0.3.3:
     dependencies:
       sql-extra: 0.1.8
     dev: false
     resolution:
-      integrity: sha512-HTGj0Y3ZOCw0D7TuJg2T4kBXfNR6VOJZC/7pnulXr7bYphXyHp0+dyHXQWTCSSS8NIdhj56OCPbJfH70CWETVA==
+      integrity: sha512-3eRmHcgqGiB+nHVuisggP+4nQR4gwpXU/D941LgvV4p7/GrNh3Jys4vNoLOZZBBgO659ExSKE/qPhxtr8FN+Fg==
   /@ifct2017/methods/0.3.2:
     dependencies:
       '@ifct2017/columns': 0.2.4
@@ -267,10 +267,10 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha1-5+Ch+e9DtMi6klxcWpboBtFoc7s=
-  /csv-parse/2.4.0:
+  /csv-parse/2.5.0:
     dev: false
     resolution:
-      integrity: sha512-C/Biz45WWkL7yGvzyD4ONDMaQFHC/nIrSCOh9YCEBLsDQ4JOSDsgp7oyTFvOaMwvI/OVfJ7qLIPcx00Dk/7USw==
+      integrity: sha512-4OcjOJQByI0YDU5COYw9HAqjo8/MOLLmT9EKyMCXUzgvh30vS1SlMK+Ho84IH5exN44cSnrYecw/7Zpu2m4lkA==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -443,22 +443,22 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-neyTUVFtahjf0mB3dZT77u+8O0QB89jFdnBkd5P1JgYPbPaia3gXXOVL2fq8VyU2gMMD7SaN7QukTB/pmXYvDA==
-  /ifct2017/0.2.3:
+  /ifct2017/0.2.4:
     dependencies:
       '@ifct2017/abbreviations': 0.3.2
       '@ifct2017/about': 0.2.1
       '@ifct2017/carbohydrates': 0.3.6
-      '@ifct2017/codes': 0.2.9
+      '@ifct2017/codes': 0.3.1
       '@ifct2017/columns': 0.3.2
       '@ifct2017/compositingcentres': 0.3.2
-      '@ifct2017/compositions': 0.2.18
+      '@ifct2017/compositions': 0.3.1
       '@ifct2017/contents': 0.3.2
-      '@ifct2017/descriptions': 0.2.9
+      '@ifct2017/descriptions': 0.3.1
       '@ifct2017/energies': 0.3.2
       '@ifct2017/frequencydistribution': 0.3.2
       '@ifct2017/groups': 0.3.3
       '@ifct2017/jonesfactors': 0.3.3
-      '@ifct2017/languages': 0.3.2
+      '@ifct2017/languages': 0.3.3
       '@ifct2017/methods': 0.3.2
       '@ifct2017/nutrients': 0.3.1
       '@ifct2017/pictures': 0.2.3
@@ -466,7 +466,7 @@ packages:
       '@ifct2017/samplingunits': 0.3.2
     dev: false
     resolution:
-      integrity: sha512-OMBwe/Mk+QNWvPkZ2vGHCzj6hyaCFg3pqG8gEkblhtF3TSDd/l2ZPPZqb5qhozJsmuv/1ok+U9Yh8hbdQPkQ+w==
+      integrity: sha512-7hmfQwYOD6jzxZW8Bl4c8G+2TGR2B5gLaJVMMHvRUEbBsmugKKjoS6xKtXnRIQK8dkGr1I+A2ubw0QZBzjzetg==
   /inherits/2.0.3:
     dev: false
     resolution:
@@ -842,7 +842,7 @@ specifiers:
   array-extra: ^0.1.5
   body-parser: ^1.18.3
   express: ^4.16.3
-  ifct2017: ^0.2.3
+  ifct2017: ^0.2.4
   natural: ^0.6.1
   number-extra: ^0.2.7
   pg: ^7.4.3

@@ -1,6 +1,6 @@
 {
   "name": "ifct2017bot",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "description": "The Indian Food Composition Tables 2017 provides nutritional information on 151 discrete food components for 528 key foods.",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "sql-extra": "^0.1.8",
     "number-extra": "^0.2.7",
     "array-extra": "^0.1.5",
-    "ifct2017": "^0.2.3"
+    "ifct2017": "^0.2.4"
   },
   "engines": {
     "node": "10.x"
