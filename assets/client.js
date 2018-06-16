@@ -1,5 +1,7 @@
-/* global Highcharts */
+/* global Set Map Highcharts */
 var ACCESS_TOKEN = 'a81e31683f1b41e39df0a3a23dbe9e58';
+var EXCLUDE_DEF = new Set(['code', 'name', 'scie', 'lang']);
+var PICTURES_URL = 'https://unpkg.com/@ifct2017/pictures@0.2.0/';
 
 var form = $('form');
 var query = $('#query');
@@ -33,10 +35,15 @@ function applyMeta(rows, meta) {
   }
 };
 
+function rowLang(txt) {
+  txt = txt.replace(/\[.*?\]/g, '');
+  txt = txt.replace(/\w+\.\s([\w\',\/\(\)\- ]+)[;\.]?/g, '$1, ');
+  return Array.from(new Set(txt.split(', '))).join(', ');
+};
 function tableColumns(rows, meta) {
-  var cols = [];
+  var cols = [{title: meta['name'].name, data: {_: 'name_t', sort: 'name'}}];
   for(var k in rows[0]) {
-    if(k.endsWith('_e')) continue;
+    if(k.endsWith('_e') || EXCLUDE_DEF.has(k)) continue;
     cols.push({title: meta[k].name, data: {_: k+'_t', sort: k}});
   }
   return cols;
@@ -44,12 +51,14 @@ function tableColumns(rows, meta) {
 function tableRows(rows, meta) {
   for(var row of rows) {
     for(var k in row) {
-      if(k.endsWith('_e')) continue;
+      if(k.endsWith('_e') || EXCLUDE_DEF.has(k)) continue;
       var v = row[k].toString(), ke = k+'_e';
       if(row[ke]) v += '±'+row[ke];
       if(meta[k].unit) v += ' '+meta[k].unit;
       row[k+'_t'] = v;
     }
+    row['name_t'] = '<img src="'+PICTURES_URL+row.code+'.jpeg" width="307"><br>'+row.name+(row.scie? ' <small>('+row.scie+')</small><br>':'')+
+      '<div style="font-size: 1rem; width: 307px;">'+rowLang(row.lang)+'</div>';
   }
   return rows;
 };
@@ -64,7 +73,7 @@ function drawTable(rows, meta) {
   });
   $('#atable_wrapper thead').on('click', 'th', function () {
     var i = datatable.column(this).index();
-    if(i>0) drawChart(rows, meta, keys[0], cols[i].data.sort);
+    if(i>0) drawChart(rows, meta, keys[1], cols[i].data.sort);
   });
   setTimeout(function() { window.dispatchEvent(new Event('resize')); }, 0);
 };
@@ -76,7 +85,7 @@ function chartValue(rows, x, y) {
   return data;
 };
 function chartRange(rows, x, y) {
-  var data = [], ye = y+'_e';
+  var data = [], ye = y+'-_e';
   if(rows[0][ye]==null) return null;
   for(var row of rows)
     data.push([row[x], round(row[y]-row[ye]), round(row[y]+row[ye])]);
@@ -114,7 +123,7 @@ form.submit(function() {
     var keys = Object.keys(rows[0]||{});
     applyMeta(rows, meta);
     drawTable(rows, meta);
-    if(keys.length>=2) drawChart(rows, meta, keys[0], keys[1]);
+    if(keys.length>=6) drawChart(rows, meta, keys[1], keys[5]);
     ahead.text(txt);
     aslang.text(data.slang);
     asql.text(data.sql);

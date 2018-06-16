@@ -2,6 +2,8 @@ const slang = require('pg-slang');
 const english = require('pg-english');
 const data = require('./data');
 
+const COLUMN_DEF = ['"code"', '"name"', '"scie"', '"lang"', '"grup"'];
+
 
 exports.sql = function (db, txt) {
   console.log(`SQL: ${txt}`);
@@ -16,7 +18,7 @@ exports.slang = async function(db, txt) {
 };
 exports.english = async function(db, txt) {
   console.log(`ENGLISH: ${txt}`);
-  var eopt = {table: 'compositions', columns: {compositions_tsvector: ['"name"']}};
+  var eopt = {table: 'compositions', columns: {compositions_tsvector: COLUMN_DEF}};
   var slang = await english(txt, (wrds) => data.matchEntity(db, wrds), null, eopt);
   var ans = await exports.slang(db, slang);
   return Object.assign({slang}, ans);

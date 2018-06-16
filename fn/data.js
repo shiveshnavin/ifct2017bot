@@ -43,7 +43,7 @@ const TABLE_COD = new Map([
   ['primari sampl unit', 'samplingunits_tsvector'],
 ]);
 const MATCH_TYP = ['table', 'column', 'row'];
-const EXCLUDE_DEF = /lang|tags|tsvector/;
+const EXCLUDE_DEF = /tags|tsvector/;
 const ORDER_DEF = ['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', 'tsvector'];
 const TYPE_DEF = new Map([
   ['code', 'TEXT'],

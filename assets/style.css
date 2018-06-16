@@ -15,6 +15,8 @@ footer {
   text-align: center;
   padding: 6rem 0;
 }
+
+
 section[main], #query:focus, #query {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
@@ -49,7 +51,3 @@ button:not([class]) {
 }
 
 
-.diet-essential {
-  background: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/keto-diet-1525796867.jpg') no-repeat center;
-  height: 20rem;
-}
