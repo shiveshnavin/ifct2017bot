@@ -11,7 +11,7 @@ exports.sql = function (db, txt) {
 };
 exports.slang = async function(db, txt) {
   console.log(`SLANG: ${txt}`);
-  var sopt = {from: 'compositions_tsvector', limits: {compositions: 20, compositions_tsvector: 20}};
+  var sopt = {from: 'compositions_tsvector', limits: {compositions: 80, compositions_tsvector: 80}};
   var sql = await slang(txt, (txt, typ, hnt, frm) => data.mapEntity(db, txt, typ, hnt, frm), null, sopt);
   var ans = await exports.sql(db, sql);
   return Object.assign({sql}, ans);
