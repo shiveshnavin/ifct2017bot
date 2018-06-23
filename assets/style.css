@@ -1,5 +1,5 @@
 body {
-  background: fixed left center url("https://i.imgur.com/WxxROR4.jpg");
+  background: fixed left center url("https://i.imgur.com/Wo2is2m.jpg");
 }
 body, select, input {
   font-family: 'Gloria Hallelujah', cursive;
@@ -18,8 +18,8 @@ footer {
 
 
 section[main], #query:focus, #query {
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  color: white;
+  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+  color: black;
 }
 card {
   background: rgba(255,255,255,0.8);

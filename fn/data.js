@@ -286,9 +286,16 @@ async function setup(db) {
   console.log(`DATA: setup done`);
 };
 
-function data(db, txt) {
+function data(db, txt, o={}) {
   var tab = txt.replace(/[\'\"]/g, '$1$1');
-  return db.query(`SELECT * FROM "${tab}";`).then(ans => describe(ans.rows));
+  var qry = `SELECT * FROM "${tab}" WHERE TRUE`, par = [], i = 0;
+  for(var k in o) {
+    if(k.includes('"')) continue;
+    qry += ` AND "${k}"=$${i+1}`;
+    par[i++] = o[k];
+  }
+  console.log('DATA:', qry, par);
+  return db.query(qry, par).then(ans => describe(ans.rows));
 };
 data.setup = setup;
 data.describe = describe;

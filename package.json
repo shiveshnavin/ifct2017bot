@@ -13,10 +13,10 @@
     "pg-slang": "^0.2.5",
     "pg-english": "^0.1.17",
     "natural": "^0.6.1",
-    "sql-extra": "^0.1.8",
+    "sql-extra": "^0.1.13",
     "number-extra": "^0.2.7",
     "array-extra": "^0.1.5",
-    "ifct2017": "^0.2.4"
+    "ifct2017": "^0.2.7"
   },
   "engines": {
     "node": "10.x"
