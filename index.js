@@ -18,6 +18,7 @@ X.all('/fn/data/:txt', (req, res, next) => data(db, req.params.txt, req.query).t
 X.all('/fn/sql/:txt', (req, res, next) => inp.sql(db, req.params.txt).then(ans => res.json(ans), next));
 X.all('/fn/slang/:txt', (req, res, next) => inp.slang(db, req.params.txt).then(ans => res.json(ans), next));
 X.all('/fn/english/:txt', (req, res, next) => inp.english(db, req.params.txt).then(ans => res.json(ans), next));
+X.all('/', (req, res, next) => res.redirect('https://ifct2017.github.io'));
 X.use(express.static('assets', {extensions: ['html']}));
 
 
