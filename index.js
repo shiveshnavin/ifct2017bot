@@ -12,6 +12,15 @@ var server = http.createServer(X);
 var db = new pg.Pool({connectionString: E.DATABASE_URL+'?ssl=true'});
 
 
+function enableCors(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  if (req.method==='OPTIONS') res.send(200);
+  else next();
+};
+
+X.use(enableCors);
 X.use(bodyParser.json());
 X.use(bodyParser.urlencoded({extended: true}));
 X.all('/fn/data/:txt', (req, res, next) => data(db, req.params.txt, req.query).then(ans => res.json(ans), next));
