@@ -29,6 +29,10 @@ X.all('/fn/slang/:txt', (req, res, next) => inp.slang(db, req.params.txt).then(a
 X.all('/fn/english/:txt', (req, res, next) => inp.english(db, req.params.txt).then(ans => res.json(ans), next));
 X.all('/', (req, res, next) => res.redirect('https://ifct2017.github.io'));
 X.use(express.static('assets', {extensions: ['html']}));
+X.use((err, req, res, next) => {
+  res.status(500).json(Object.assign({message: err.message}, err));
+  console.error(err);
+});
 
 
 server.listen(E.PORT||80, () => {

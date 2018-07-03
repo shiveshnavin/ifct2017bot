@@ -176,7 +176,7 @@ function getMeta(rows) {
     if(k.endsWith('_e')) continue;
     var name = k.includes('"')? k.replace(/\"(.*?)\"/g, (m, p1) => getName(p1)):getName(k);
     var type = typeof row[k]==='string'? 'TEXT':TYPE_DEF.get(k)||'REAL';
-    var ismass = type==='REAL' && (k+'_e' in row || k.includes('"'));
+    var ismass = type==='REAL'&& k!=='enerc' && (k+'_e' in row || k.includes('"'));
     var factor = ismass? getFactor(rows, k):0;
     var unit = ismass? UNIT_SYM.get(factor):UNIT_DEF.get(k)||null;
     meta[k] = {name, type, factor, unit};

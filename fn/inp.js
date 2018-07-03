@@ -13,13 +13,19 @@ exports.slang = async function(db, txt) {
   console.log(`SLANG: ${txt}`);
   var sopt = {from: 'compositions_tsvector', limits: {compositions: 50, compositions_tsvector: 50}};
   var sql = await slang(txt, (txt, typ, hnt, frm) => data.mapEntity(db, txt, typ, hnt, frm), null, sopt);
-  var ans = await exports.sql(db, sql);
-  return Object.assign({sql}, ans);
+  try {
+    var ans = await exports.sql(db, sql);
+    return Object.assign({sql}, ans);
+  }
+  catch(e) { throw Object.assign(e, {sql}); }
 };
 exports.english = async function(db, txt) {
   console.log(`ENGLISH: ${txt}`);
   var eopt = {table: 'compositions', columns: {compositions_tsvector: COLUMN_DEF}};
   var slang = await english(txt, (wrds) => data.matchEntity(db, wrds), null, eopt);
-  var ans = await exports.slang(db, slang);
-  return Object.assign({slang}, ans);
+  try {
+    var ans = await exports.slang(db, slang);
+    return Object.assign({slang}, ans);
+  }
+  catch(e) { throw Object.assign(e, {slang}); }
 };
