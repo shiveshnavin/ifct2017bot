@@ -212,47 +212,6 @@ function orderBy(cols, by, pre=ORDER_DEF) {
   return tcols;
 };
 
-
-function toValueMode(cols) {
-  var tcols = {};
-  for(var k in cols) {
-    var tk = k.replace(/_e$/, '');
-    var i = k.endsWith('_e')? 1:0;
-    tcols[tk] = tcols[tk]||[];
-    tcols[tk][i] = cols[k];
-  }
-  return tcols;
-};
-function toRangeMode(cols) {
-  var tcols = {};
-  for(var k in cols) {
-    if(k.endsWith('_e')) continue;
-    if(!(k+'_e' in cols)) { tcols[k] = [cols[k]]; continue; }
-    var val = cols[k], err = cols[k+'_e'], bgn = [], end = [];
-    for(var i=0, I=val.length; i<I; i++) {
-      var v = val[i], e = err[i];
-      bgn[i] = v-e; end[i] = v+e;
-    }
-    tcols[k] = [bgn, end];
-  }
-  return tcols;
-};
-function toTextMode(cols, meta) {
-  var tcols = {};
-  for(var k in cols) {
-    if(k.endsWith('_e')) continue;
-    var col = cols[k], cole = cols[k+'_e']||null, unit = meta[k].unit;
-    for(var i=0, I=col.length, txt=new Array(I); i<I; i++) {
-      var t = col[i].toString();
-      if(cole!=null && cole[i]>0) t += `±${cole[i]}`;
-      if(unit!=null) t += ` ${unit}`
-      txt[i] = t;
-    }
-    tcols[k] = txt;
-  }
-  return tcols;
-};
-
 function describe(rows) {
   var rows = rows||[];
   exclude(rows);
