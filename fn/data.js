@@ -64,7 +64,7 @@ const TYPE_DEF = new Map([
   ['kcal', 'INT'],
 ]);
 const UNIT_DEF = new Map([
-  ['enerc', 'kcal'],
+  ['enerc', 'kJ'],
 ]);
 const UNIT_SYM = new Map([
   [0, 'g'],
