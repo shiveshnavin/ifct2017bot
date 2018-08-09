@@ -254,7 +254,7 @@ function data(db, txt, o={}) {
     par[i++] = o[k];
   }
   console.log('DATA:', qry, par);
-  return db.query(qry, par).then(ans => describe(ans.rows));
+  return db.query(qry, par).then(ans => ans.rows||[]);
 };
 data.setup = setup;
 data.describe = describe;
