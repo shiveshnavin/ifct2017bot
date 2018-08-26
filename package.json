@@ -16,7 +16,7 @@
     "sql-extra": "^0.1.13",
     "number-extra": "^0.2.11",
     "array-extra": "^0.1.5",
-    "ifct2017": "^1.3.2"
+    "ifct2017": "^1.5.2"
   },
   "engines": {
     "node": "10.x"
