@@ -215,8 +215,7 @@ function orderBy(cols, by, pre=ORDER_DEF) {
 function describe(rows) {
   var rows = rows||[];
   exclude(rows);
-  var meta = getMeta(rows);
-  return {meta, rows};
+  return {rows};
 };
 
 async function setup(db) {
