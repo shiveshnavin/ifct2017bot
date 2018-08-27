@@ -45,40 +45,7 @@ const TABLE_COD = new Map([
 const MATCH_TYP = ['table', 'column', 'row'];
 const EXCLUDE_DEF = /tags|tsvector/;
 const ORDER_DEF = ['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', 'tsvector'];
-const TYPE_DEF = new Map([
-  ['code', 'TEXT'],
-  ['name', 'TEXT'],
-  ['scie', 'TEXT'],
-  ['lang', 'TEXT'],
-  ['grup', 'TEXT'],
-  ['regn', 'INT'],
-  ['tsvector', 'TSVECTOR'],
-  ['hydrolysis', 'INT'],
-  ['states', 'INT'],
-  ['districts', 'INT'],
-  ['selected', 'INT'],
-  ['sampled', 'INT'],
-  ['samples', 'INT'],
-  ['entries', 'INT'],
-  ['kj', 'INT'],
-  ['kcal', 'INT'],
-]);
-const UNIT_DEF = new Map([
-  ['enerc', 'kJ'],
-]);
-const UNIT_SYM = new Map([
-  [0, 'g'],
-  [3, 'mg'],
-  [6, 'ug'],
-  [9, 'ng'],
-]);
 const COLUMNS = ifct2017.columns.corpus;
-const COLUMN_NAM = new Map([
-  ['abbr', 'Abbreviation'],
-  ['desc', 'Description'],
-  ['kj', 'kJ'],
-  ['kcal', 'kcal'],
-]);
 
 
 function replaceColumn(txt) {
