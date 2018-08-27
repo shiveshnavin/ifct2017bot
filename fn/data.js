@@ -157,33 +157,6 @@ function matchEntity(db, wrds) {
   });
 };
 
-function round(num) {
-  return Math.round(num*1e+12)/1e+12;
-};
-function getName(k) {
-  return COLUMNS.has(k)? COLUMNS.get(k).name:COLUMN_NAM.get(k)||k[0].toUpperCase()+k.substring(1);
-};
-function getFactor(rows, k) {
-  var max = -Infinity;
-  for(var row of rows)
-    max = Math.max(max, row[k]);
-  return Math.min(-Math.floor(Math.log10(max+1e-10)/3)*3, 9);
-};
-function getMeta(rows) {
-  var row = rows[0], meta = {};
-  if(row==null) return meta;
-  for(var k in row) {
-    if(k.endsWith('_e')) continue;
-    var name = k.includes('"')? k.replace(/\"(.*?)\"/g, (m, p1) => getName(p1)):getName(k);
-    var type = typeof row[k]==='string'? 'TEXT':TYPE_DEF.get(k)||'REAL';
-    var ismass = type==='REAL'&& k!=='enerc' && (k+'_e' in row || k.includes('"'));
-    var factor = ismass? getFactor(rows, k):0;
-    var unit = ismass? UNIT_SYM.get(factor):UNIT_DEF.get(k)||null;
-    meta[k] = {name, type, factor, unit};
-  }
-  return meta;
-};
-
 function exclude(rows, re=EXCLUDE_DEF) {
   for(var row of rows) {
     for(var k in row)
