@@ -49,6 +49,7 @@ const COLUMNS = ifct2017.columns.corpus;
 
 
 function replaceColumn(txt) {
+  txt = txt.replace(/^(^|.*\W)his(\W.*|$)$/gi, '$1_his$2');
   return txt.replace(/(^|.*\W)vitamin[^\w]+a(\W.*|$)/gi, '$1vitamin-a$2');
 };
 function mapTable(txt) {
