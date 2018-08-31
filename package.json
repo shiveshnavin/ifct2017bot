@@ -10,8 +10,9 @@
     "express": "^4.16.3",
     "body-parser": "^1.18.3",
     "pg": "^7.4.3",
+    "pg-english": "^0.1.3",
     "pg-slang": "^0.2.6",
-    "pg-english": "^0.1.30",
+    "pg-english": "^0.1.34",
     "natural": "^0.6.1",
     "sql-extra": "^0.1.13",
     "number-extra": "^0.2.11",
@@ -37,8 +38,6 @@
     "google",
     "assistant",
     "action",
-    "amazon",
-    "alexa",
     "skill",
     "slack"
   ]

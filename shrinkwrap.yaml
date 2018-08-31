@@ -6,7 +6,7 @@ dependencies:
   natural: 0.6.1
   number-extra: 0.2.14
   pg: 7.4.3
-  pg-english: 0.1.30
+  pg-english: 0.1.34
   pg-slang: 0.2.6
   sql-extra: 0.1.13
 packages:
@@ -159,12 +159,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-+9jqy12n41Ot7Dfu7Sj3fxHcjvkenq4E9H++QHkUqLKn8TtLtVCcWnWNUB0+kMNeOst3NAQXaq85JHg5XItTdA==
-  /@pg-english/number/0.1.8:
+  /@pg-english/number/0.1.11:
     dependencies:
       '@pg-english/token': 0.1.10
     dev: false
     resolution:
-      integrity: sha512-+wPX1AoBvyCRfg6LcVgUoosyPFJgmMcPKtqdCAqyUmANSMKboHiKb4GSz2C9kvleSqFxXTDpMxfPvEskXL1R/Q==
+      integrity: sha512-Ecjc3qcUVwBA5FkI3N8iU+elA4efZdAeD3O+OjLjOcVgqR7HMxMg24YDz7f068ccgkkMSsdHLk7eTckoMw+lfw==
   /@pg-english/reserved/0.1.7:
     dependencies:
       '@pg-english/token': 0.1.10
@@ -597,16 +597,16 @@ packages:
     dev: false
     resolution:
       integrity: sha1-2hhHsglA5C7hSSvq9l1J2RskXfc=
-  /pg-english/0.1.30:
+  /pg-english/0.1.34:
     dependencies:
       '@pg-english/entity': 0.1.8
-      '@pg-english/number': 0.1.8
+      '@pg-english/number': 0.1.11
       '@pg-english/reserved': 0.1.7
       '@pg-english/token': 0.1.10
       '@pg-english/unit': 0.1.1
     dev: false
     resolution:
-      integrity: sha512-bh3ayQdVZrGgIIoQ2F7JwcatxDTZyKpIJdVrypQnVJXwxVyofGT9l8sgOzs6RGMLUU5qOVQ1nuHcADkZ72b6rA==
+      integrity: sha512-K8hUtnj47/7wp0MLrMOrwuNmI5ezRSNjJsfIlxFDh++7jcpw0s66X6yZhdWUXXV2pBPmhQHOSQcKq/ntTcoSaw==
   /pg-pool/2.0.3:
     dev: false
     peerDependencies:
@@ -861,6 +861,6 @@ specifiers:
   natural: ^0.6.1
   number-extra: ^0.2.11
   pg: ^7.4.3
-  pg-english: ^0.1.30
+  pg-english: ^0.1.34
   pg-slang: ^0.2.6
   sql-extra: ^0.1.13

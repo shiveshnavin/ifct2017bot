@@ -4,7 +4,7 @@ const Sql = require('sql-extra');
 const natural = require('natural');
 const ifct2017 = require('ifct2017');
 
-const IGNORE = /^(a|an|the|i|he|him|she|her|they|their|as|at|are|if|in|is|it|of|on|to|by|want|well|that|than|then|thus|however|ok|okay)$/;
+const IGNORE = /^(\W|a|an|the|i|he|him|she|her|they|their|as|at|are|if|in|is|it|of|on|to|by|want|well|that|than|then|thus|however|ok|okay)$/;
 const COLUMN_ALL = new Set(['everyth', 'complet', 'wholli', 'whole', 'total', 'entir', 'fulli', 'full', 'all', '*']);
 const COLUMN_VAL = new Set(['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', '*']);
 const TABLE_COD = new Map([
