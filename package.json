@@ -11,12 +11,12 @@
     "body-parser": "^1.18.3",
     "pg": "^7.4.3",
     "pg-slang": "^0.2.6",
-    "pg-english": "^0.1.26",
+    "pg-english": "^0.1.30",
     "natural": "^0.6.1",
     "sql-extra": "^0.1.13",
     "number-extra": "^0.2.11",
     "array-extra": "^0.1.5",
-    "ifct2017": "^1.5.2"
+    "ifct2017": "^1.5.3"
   },
   "engines": {
     "node": "10.x"
