@@ -4,7 +4,7 @@ const Sql = require('sql-extra');
 const natural = require('natural');
 const ifct2017 = require('ifct2017');
 
-const IGNORE = /^(a|an|the|i|he|him|she|her|they|their|as|at|if|in|is|it|of|on|to|by|want|well|than|then|thus|however|ok|okay)$/;
+const IGNORE = /^(a|an|the|i|he|him|she|her|they|their|as|at|if|in|is|it|of|on|to|by|want|well|that|than|then|thus|however|ok|okay)$/;
 const COLUMN_ALL = new Set(['everyth', 'complet', 'wholli', 'whole', 'total', 'entir', 'fulli', 'full', 'all', '*']);
 const COLUMN_VAL = new Set(['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', '*']);
 const TABLE_COD = new Map([
@@ -52,7 +52,7 @@ function replaceColumn(txt) {
   return txt.replace(/(^|.*\W)vitamin[^\w]+a(\W.*|$)/gi, '$1vitamin-a$2');
 };
 function mapTable(txt) {
-  var stm = txt.split(' ').filter((v) => !IGNORE.test(v)).map(natural.PorterStemmer.stem).sort().join(' ');
+  var stm = txt.split(' ').filter(v => !IGNORE.test(v)).map(natural.PorterStemmer.stem).sort().join(' ');
   if(TABLE_COD.has(stm)) return [TABLE_COD.get(stm)];
   return [`"tsvector" @@ plainto_tsquery('${txt}')`, 'compositions_tsvector'];
 };
@@ -85,7 +85,7 @@ function mapEntity(db, txt, typ, hnt, frm) {
 function matchTable(wrds) {
   wrds = wrds.map(natural.PorterStemmer.stem);
   for(var i=wrds.length; i>0; i--) {
-    var txt = wrds.filter((v) => !IGNORE.test(v)).sort().join(' ');
+    var txt = wrds.filter(v => !IGNORE.test(v)).sort().join(' ');
     if(TABLE_COD.has(txt)) return {value: TABLE_COD.get(txt), hint: TABLE_COD.get(txt), length: i};
   }
   return null;
