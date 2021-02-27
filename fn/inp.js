@@ -5,10 +5,13 @@ const data = require('./data');
 const COLUMN_DEF = ['"code"', '"name"', '"scie"', '"lang"', '"grup"'];
 
 
+
+
 exports.sql = function (db, txt) {
   console.log(`SQL: ${txt}`);
   return db.query(txt).then(ans => data.describe(ans.rows));
 };
+
 exports.slang = async function(db, txt) {
   console.log(`SLANG: ${txt}`);
   var sopt = {from: 'compositions_tsvector', limits: {compositions: 50, compositions_tsvector: 50}};
@@ -19,6 +22,7 @@ exports.slang = async function(db, txt) {
   }
   catch(e) { throw Object.assign(e, {sql}); }
 };
+
 exports.english = async function(db, txt) {
   console.log(`ENGLISH: ${txt}`);
   var eopt = {table: 'compositions', columns: {compositions_tsvector: COLUMN_DEF}};

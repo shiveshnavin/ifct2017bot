@@ -48,15 +48,19 @@ const ORDER_DEF = ['code', 'name', 'scie', 'lang', 'grup', 'regn', 'enerc', 'tsv
 const COLUMNS = ifct2017.columns.corpus;
 
 
+
+
 function replaceColumn(txt) {
   txt = txt.replace(/^(^|.*\W)his(\W.*|$)$/gi, '$1_his$2');
   return txt.replace(/(^|.*\W)vitamin[^\w]+a(\W.*|$)/gi, '$1vitamin-a$2');
-};
+}
+
 function mapTable(txt) {
   var stm = txt.split(' ').filter(v => !IGNORE.test(v)).map(natural.PorterStemmer.stem).sort().join(' ');
   if(TABLE_COD.has(stm)) return [TABLE_COD.get(stm)];
   return [`"tsvector" @@ plainto_tsquery('${txt}')`, 'compositions_tsvector'];
-};
+}
+
 function mapColumn(db, txt, typ, hnt, frm) {
   var txt = replaceColumn(txt), cols = [];
   if(COLUMN_ALL.has(natural.PorterStemmer.stem(txt))) return Promise.resolve(['*']);
@@ -72,16 +76,19 @@ function mapColumn(db, txt, typ, hnt, frm) {
     }
     return cols;
   });
-};
+}
+
 function mapRow(db, txt, typ, hnt, frm) {
   var sql = 'SELECT "code" FROM "compositions_tsvector" WHERE "tsvector" @@ plainto_tsquery($1)';
   if(hnt==null) sql += ' ORDER BY ts_rank("tsvector", plainto_tsquery($1), 0) DESC LIMIT 1';
   return db.query(sql, [txt]).then(ans => (ans.rows||[]).map(v => v.code));
-};
+}
+
 function mapEntity(db, txt, typ, hnt, frm) {
   if(typ==='from') return mapTable(txt);
   else return mapColumn(db, txt, typ, hnt, frm);
-};
+}
+
 
 function matchTable(wrds) {
   wrds = wrds.map(natural.PorterStemmer.stem);
@@ -90,7 +97,8 @@ function matchTable(wrds) {
     if(TABLE_COD.has(txt)) return {value: TABLE_COD.get(txt), hint: TABLE_COD.get(txt), length: i};
   }
   return null;
-};
+}
+
 function matchColumn(db, wrds) {
   var sql = '', par = [];
   for(var i=wrds.length, p=1; i>0; i--, p++) {
@@ -103,7 +111,8 @@ function matchColumn(db, wrds) {
     if(ans.rowCount>0 && ans.rows[0].i>ncol) return {value: ans.rows[0].code, hint: 'compositions_tsvector', length: ans.rows[0].i};
     return col? {value: col, length: 1}:null;
   });
-};
+}
+
 function matchRow(db, wrds) {
   var sql = '', par = [];
   for(var i=wrds.length, p=1; i>0; i--, p++) {
@@ -112,7 +121,8 @@ function matchRow(db, wrds) {
   }
   sql = sql.substring(0, sql.length-11);
   return db.query(sql, par).then(ans => ans.rowCount>0? {value: ans.rows[0].code, hint: 'compositions_tsvector', length: ans.rows[0].i}:null);
-};
+}
+
 function matchEntity(db, wrds) {
   var rdy = [matchTable(wrds), matchColumn(db, wrds), matchRow(db, wrds)];
   return Promise.all(rdy).then(ans => {
@@ -123,14 +133,16 @@ function matchEntity(db, wrds) {
     var value = wrds.slice(0, l[mi]).join(' '), hint = ans[mi].hint;
     return {type: MATCH_TYP[mi], value, hint, length: l[mi]};
   });
-};
+}
+
 
 function exclude(rows, re=EXCLUDE_DEF) {
   for(var row of rows) {
     for(var k in row)
       if(re.test(k)) row[k] = 0;
   }
-};
+}
+
 function orderBy(cols, by, pre=ORDER_DEF) {
   var tcols = {}, cmp = {}, ks = [], tks = null;
   for(var k in cols)
@@ -151,13 +163,14 @@ function orderBy(cols, by, pre=ORDER_DEF) {
   for(var k in cols)
     tcols[k] = cols[k];
   return tcols;
-};
+}
 
 function describe(rows) {
   var rows = rows||[];
   exclude(rows);
   return {rows};
-};
+}
+
 
 async function setup(db) {
   var o = ifct2017;
@@ -183,7 +196,7 @@ async function setup(db) {
     o.descriptions.sql().then(ans => db.query(ans)),
   ]);
   console.log(`DATA: setup done`);
-};
+}
 
 function data(db, txt, o={}) {
   var tab = txt.replace(/[\'\"]/g, '$1$1');
@@ -195,7 +208,8 @@ function data(db, txt, o={}) {
   }
   console.log('DATA:', qry, par);
   return db.query(qry, par).then(ans => ans.rows||[]);
-};
+}
+
 data.setup = setup;
 data.describe = describe;
 data.mapTable = mapTable;
