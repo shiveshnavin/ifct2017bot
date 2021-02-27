@@ -127,8 +127,10 @@ function matchEntity(db, wrds) {
   var rdy = [matchTable(wrds), matchColumn(db, wrds), matchRow(db, wrds)];
   return Promise.all(rdy).then(ans => {
     var l = ans.map(v => v? v.length:0);
+    console.log(wrds, ans);
     var mi = l[1]>l[0]? 1:0;
-    mi = l[2]>=l[mi]? 2:mi;
+    mi = l[2]>l[mi]? 2:mi;
+    console.log(wrds, l, mi);
     if(l[mi]===0) return null;
     var value = wrds.slice(0, l[mi]).join(' '), hint = ans[mi].hint;
     return {type: MATCH_TYP[mi], value, hint, length: l[mi]};

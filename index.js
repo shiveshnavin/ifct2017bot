@@ -5,12 +5,13 @@ const pg = require('pg');
 const ifct2017 = require('ifct2017');
 const data = require('./fn/data');
 const inp = require('./fn/inp');
+const query = require('./fn/query');
 
 const E = process.env;
-const app = express();
+var app = express();
 var server = http.createServer(app);
 var db = new pg.Pool({connectionString: E.DATABASE_URL+'?ssl=true'});
-
+var dq = new pg.Pool({connectionString: E.DATABASE_QUERY_URL+'?ssl=true'});
 
 function enableCors(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -28,6 +29,9 @@ app.all('/fn/data/:txt', (req, res, next) => data(db, req.params.txt, req.query)
 app.all('/fn/sql/:txt', (req, res, next) => inp.sql(db, req.params.txt).then(ans => res.json(ans), next));
 app.all('/fn/slang/:txt', (req, res, next) => inp.slang(db, req.params.txt).then(ans => res.json(ans), next));
 app.all('/fn/english/:txt', (req, res, next) => inp.english(db, req.params.txt).then(ans => res.json(ans), next));
+app.all('/fn/query/search/', (req, res, next) => query.search(dq, '').then(ans => res.json(ans), next));
+app.all('/fn/query/search/:txt', (req, res, next) => query.search(dq, req.params.txt).then(ans => res.json(ans), next));
+app.all('/fn/query/save/:txt', (req, res, next) => query.save(dq, req.params.txt).then(ans => res.json(ans), next));
 app.all('/', (req, res, next) => res.redirect('https://ifct2017.github.io'));
 
 app.use(express.static('assets', {extensions: ['html']}));
@@ -43,3 +47,4 @@ server.listen(E.PORT||80, () => {
   console.log(`SERVER: ready at port ${port}`);
 });
 data.setup(db);
+query.setup(dq);
