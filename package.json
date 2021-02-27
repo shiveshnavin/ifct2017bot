@@ -16,7 +16,7 @@
     "sql-extra": "^0.1.13",
     "number-extra": "^0.2.11",
     "array-extra": "^0.1.5",
-    "ifct2017": "^1.5.4"
+    "ifct2017": "^1.5.27"
   },
   "repository": {
     "url": "https://github.com/skillf/ifct2017bot"
