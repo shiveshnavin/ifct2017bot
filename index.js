@@ -16,12 +16,14 @@ var db = new pg.Pool({
   connectionString: E.DATABASE_URL, keepAlive: true,
   connectionTimeoutMillis: 10000,
   max: 4,
+  log: console.log,
   maxUses: 4
 });
 var dq = new pg.Pool({
   connectionString: E.DATABASE_QUERY_URL, keepAlive: true,
   connectionTimeoutMillis: 10000,
   max: 4,
+  log: console.log,
   maxUses: 4
 });
 

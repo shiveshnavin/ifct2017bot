@@ -13,3 +13,11 @@ You can ask me about the "name", "code", "type", or "approval" of any such addit
 ```
 
 Say "done / got it" when you are done talking to me.`,
+
+### Samples
+
+https://nutrobits.glitch.me/fn/english/show cereals with most energy and vitamins
+
+https://nutrobits.glitch.me/fn/data/compositions?code=D073
+
+https://cdn.jsdelivr.net/npm/@ifct2017/pictures/assets/D073.jpeg
